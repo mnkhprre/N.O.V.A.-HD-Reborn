@@ -1,34 +1,39 @@
-# N.O.V.A. Reborn
+# N.O.V.A. HD Android Reverse Engineering
 
-**A browser-based 3D sci-fi FPS inspired by the Near Orbit Vanguard Alliance universe.**
+**An unofficial reverse-engineering and controller-compatibility project for the original N.O.V.A. HD Android game.**
 
-The game features three combat sectors, upgradeable weapons, Xeno enemies, suit abilities, and photon circuit puzzles. This repository also includes a community-made Android controller patch for N.O.V.A. HD 1.1.4 and an APK build workflow.
+This repository contains a community-made Smali modification of the original Android package. The work focuses on physical-controller input and a first-launch installer for the bundled game data. The released community build identifies itself as version 1.1.5 (version code 115); it is not an official Gameloft 1.1.5 release.
 
-> This is an unofficial community project and is not published by Gameloft. The N.O.V.A. trademark and original game content belong to their respective rights holders.
+> This is a fan-made reverse-engineering project. It is not affiliated with or endorsed by Gameloft. N.O.V.A. and its original code, art, audio, and other game content remain the property of their respective rights holders.
 
-## Android controller release
+## Game screenshots
 
-[**View N.O.V.A. HD 1.1.4 Controller Support →**](https://github.com/mnkhprre/nova_reborn/releases/tag/v1.1.4-controller.1)
+<p align="center">
+  <img src="game-main-menu.png" alt="N.O.V.A. HD main menu" width="49%">
+  <img src="gameplay-combat.png" alt="N.O.V.A. HD combat gameplay" width="49%">
+</p>
 
-Original game download: [N.O.V.A. on the Internet Archive](https://archive.org/details/nova-1).
+## Latest Android release
 
-Download `nova-reborn-1.1.5-with-game-data.apk` from the latest successful GitHub Actions run and install it on your Android device. It will not install over a copy signed with a different key (for example the original Play Store build); uninstall that copy first. On first launch, the app installs the bundled files into `/sdcard/gameloft/games/nova` before starting the game. Existing files not present in the bundle are preserved.
+[**Download N.O.V.A. HD 1.1.5 Controller Support**](https://github.com/mnkhprre/nova_reborn/releases/tag/v1.1.5-controller.1)
 
-**Android 14 and newer:** the system blocks installing apps that target very old Android versions, so a normal install fails. Install with adb instead:
+The APK includes the game data. On first launch, it installs the bundled files into `/sdcard/gameloft/games/nova` before starting the game. Keep the app open during extraction. Existing files that are not included in the bundle are preserved.
+
+If Android reports a signature conflict with another installed copy, uninstall that copy before installing this build. Android 14 and newer may block APKs that target very old Android versions; install with adb if needed:
 
 ```bash
 adb install --bypass-low-target-sdk-block nova-reborn-1.1.5-with-game-data.apk
 ```
 
-The target SDK cannot simply be raised: `libnova.so` contains text relocations, which Android refuses to load for apps targeting API 23 or newer. The game also ships only 32-bit (`armeabi-v7a`) native code, so it does not run on 64-bit-only devices.
+The original native library contains text relocations and is 32-bit (`armeabi-v7a`) only. Raising the target SDK prevents the native library from loading, and 64-bit-only devices are not supported.
 
-### Controls
+### Controller mapping
 
-| Input | Action |
+| Controller input | In-game action |
 | --- | --- |
 | Left stick | Move |
 | Right stick | Camera |
-| R2 | Fire (digital button or analog trigger) |
+| R2 | Fire |
 | R1 | Reload |
 | L1 | Previous weapon |
 | Y | Next weapon |
@@ -37,46 +42,27 @@ The target SDK cannot simply be raised: `libnova.so` contains text relocations, 
 | Start | Pause |
 | D-pad | Navigate menus |
 
-## Browser game
+## Build
 
-### Start the development server
+GitHub Actions builds and signs the APK on pushes to `main`, pull requests, and manual runs. It downloads and validates the game-data archive, compiles the first-launch installer, builds the original Android project with Apktool, and uploads the signed APK as a workflow artifact. The artifact is about 200 MB because the game data is bundled inside it.
 
-```bash
-npm install
-npm run dev
-```
+The project does not include the original game archive in Git. The workflow downloads it from the Internet Archive; a manual run can override the source with the `game_data_url` input.
 
-To create a production build:
+For updateable builds, the workflow uses these repository secrets:
 
-```bash
-npm run build
-```
-
-The project uses React, TypeScript, Vite, and Three.js. A current browser with WebGL support is required.
-
-## Android APK build
-
-`.github/workflows/build-apk.yml` builds and signs a single installable APK on pushes to `main`, pull requests, or a manual workflow run. During the build, GitHub Actions downloads the game-data ZIP from the Internet Archive and packages it inside the APK. The launcher extracts the files on first launch to `/sdcard/gameloft/games/nova`, then starts the game. Allow storage access when prompted and keep the app open during extraction.
-
-The workflow artifact is `nova-reborn-1.1.5-with-game-data` in the run's **Artifacts** section and is retained for 14 days. Manual runs can override the data ZIP URL with the `game_data_url` input. The resulting APK is about 200 MB because it contains the game data.
-
-### Signing key
-
-So that each new build installs over the previous one, the workflow signs with a fixed key stored in repository secrets:
-
-| Secret | Value |
+| Secret | Purpose |
 | --- | --- |
-| `ANDROID_KEYSTORE_BASE64` | The keystore file, base64-encoded |
+| `ANDROID_KEYSTORE_BASE64` | Base64-encoded signing keystore |
 | `ANDROID_KEYSTORE_PASSWORD` | Keystore password |
 | `ANDROID_KEY_ALIAS` | Key alias |
-| `ANDROID_KEY_PASSWORD` | Key password (optional; defaults to the keystore password) |
+| `ANDROID_KEY_PASSWORD` | Optional key password; defaults to the keystore password |
 
-Without these secrets (for example on pull requests from forks) the build falls back to a throwaway key and prints a warning. Keep a backup of the keystore: if it is lost, users must uninstall before installing a build signed with a new key. Never commit the keystore (`*.keystore` and `*.jks` are ignored).
+Without these secrets, pull-request builds use a temporary signing key and cannot update a build signed with another key. Never commit signing keys.
 
-## Project status
+## Project layout
 
-- Browser game: playable prototype
-- Android: controller modifications for N.O.V.A. HD 1.1.4
-- Automated APK builds: GitHub Actions
+- `N.0.V.A. HD 1.1.4 All screens/`: decoded original Android package and community Smali changes
+- `Games/nova/`: original game-data tree used by the Android game
+- `.github/workflows/build-apk.yml`: automated APK build
 
-The Android APK and release page are available only to users with repository access because this repository is currently private.
+All reverse-engineering work is intended for study, compatibility, and preservation.
