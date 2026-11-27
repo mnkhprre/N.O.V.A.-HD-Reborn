@@ -26,9 +26,13 @@ The target SDK cannot simply be raised: `libnova.so` contains text relocations, 
 | --- | --- |
 | Left stick | Move |
 | Right stick | Camera |
-| R2 | Fire |
+| R2 | Fire (digital button or analog trigger) |
 | R1 | Reload |
-| L1 | Next weapon |
+| L1 | Previous weapon |
+| Y | Next weapon |
+| A / B | Jump |
+| X | Suit ability |
+| Start | Pause |
 | D-pad | Navigate menus |
 
 ## Browser game
