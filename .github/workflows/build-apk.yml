@@ -101,7 +101,6 @@ jobs:
         run: |
           java -jar "$RUNNER_TEMP/apktool.jar" b \
             --frame-path "$RUNNER_TEMP/apktool-framework" \
-            -0 zip \
             "N.0.V.A. HD 1.1.4 All screens" \
             --output "$RUNNER_TEMP/nova-reborn-unsigned.apk"
 

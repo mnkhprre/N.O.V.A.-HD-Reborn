@@ -16,5 +16,6 @@ doNotCompress:
 - ogg
 - png
 - assets/data.save
+- assets/nova-game-data.zip
 - res/raw/infoversion.txt
 - res/raw/serialkey.txt
