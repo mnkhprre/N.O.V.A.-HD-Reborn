@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout android:gravity="center" android:id="@id/LinearLayout01" android:background="@drawable/gi_background" android:layout_width="match_parent" android:layout_height="match_parent" style="@style/Theme.GameInstaller"
+  xmlns:android="http://schemas.android.com/apk/res/android">
+    <FrameLayout android:id="@id/FrameLayout00" android:layout_width="match_parent" android:layout_height="match_parent">
+        <FrameLayout android:id="@id/FrameLayoutDialog" android:padding="@dimen/gi_main_layout_padding" android:layout_width="match_parent" android:layout_height="match_parent">
+            <FrameLayout android:id="@id/FrameLayout01" android:background="@drawable/gi_alpha_box" android:layout_width="match_parent" android:layout_height="match_parent">
+                <LinearLayout android:layout_gravity="center" android:orientation="vertical" android:id="@id/LinearLayout02" android:layout_width="wrap_content" android:layout_height="match_parent">
+                    <TextView android:textSize="@dimen/gi_small_text_size" android:layout_gravity="center|top" android:id="@id/txMessageInfo" android:layout_width="wrap_content" android:layout_height="wrap_content" android:layout_marginTop="@dimen/gi_downloading_pading_h" android:text="@string/DONT_TURN_OFF_YOUR_PHONE" />
+                    <TextView android:textSize="@dimen/gi_small_text_size" android:layout_gravity="center" android:id="@id/txDownloading" android:paddingBottom="@dimen/gi_downloading_pading_tb" android:layout_width="wrap_content" android:layout_height="wrap_content" android:layout_marginTop="@dimen/gi_downloading_pading_tb" android:text="@string/DOWNLOADING" />
+                    <LinearLayout android:layout_gravity="center" android:orientation="horizontal" android:id="@id/LinearLayout03" android:layout_width="wrap_content" android:layout_height="wrap_content">
+                        <ProgressBar android:layout_gravity="center" android:id="@id/donloadProgressBar" android:layout_width="wrap_content" android:layout_height="wrap_content" android:layout_marginLeft="@dimen/gi_downloading_pading_lr" android:layout_marginRight="@dimen/gi_downloading_pading_lr" android:max="100" android:minWidth="360.0dp" android:layout_weight="1.0" style="?android:attr/progressBarStyleHorizontal" />
+                        <Button android:layout_gravity="right|top" android:id="@id/bt_ly_download_files_cancel" android:layout_width="wrap_content" android:layout_height="wrap_content" android:layout_marginRight="@dimen/gi_downloading_pading_lr" android:text="@string/CANCEL" />
+                    </LinearLayout>
+                    <WebView android:layout_gravity="center" android:id="@id/wvAd" android:layout_width="wrap_content" android:layout_height="match_parent" android:layout_marginLeft="@dimen/gi_downloading_pading_lr" android:layout_marginTop="@dimen/gi_webview_padding_t" android:layout_marginRight="@dimen/gi_downloading_pading_lr" android:layout_marginBottom="@dimen/gi_webview_padding_b" />
+                </LinearLayout>
+            </FrameLayout>
+        </FrameLayout>
+        <FrameLayout android:layout_gravity="top" android:id="@id/FrameLayoutHeader" android:background="@drawable/gi_top_bar" android:layout_width="match_parent" android:layout_height="@dimen/gi_tittle_bar_size_h">
+            <TextView android:layout_gravity="center" android:id="@id/txtTittleMessage" android:layout_width="wrap_content" android:layout_height="wrap_content" android:text="@string/app_name" style="@style/gi_Widget.TextViewTittle" />
+            <ImageView android:id="@id/ImageView01" android:paddingLeft="@dimen/gi_logo_tittle_gap" android:paddingTop="@dimen/gi_logo_tittle_gap" android:layout_width="wrap_content" android:layout_height="wrap_content" android:src="@drawable/gi_logo_tittle" />
+        </FrameLayout>
+    </FrameLayout>
+</LinearLayout>

@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="utf-8"?>
+<merge android:layout_width="match_parent" android:layout_height="match_parent"
+  xmlns:android="http://schemas.android.com/apk/res/android">
+    <VideoView android:layout_gravity="center" android:id="@id/surface_view" android:layout_width="match_parent" android:layout_height="match_parent" />
+    <LinearLayout android:gravity="center_horizontal" android:layout_gravity="bottom" android:background="#88aaaaaa" android:paddingTop="0.0dp" android:layout_width="match_parent" android:layout_height="wrap_content">
+        <ImageButton android:id="@id/backward" android:layout_width="wrap_content" android:layout_height="wrap_content" android:src="@drawable/backward" />
+        <ImageButton android:id="@id/play" android:layout_width="wrap_content" android:layout_height="wrap_content" android:src="@drawable/play" />
+        <ImageButton android:id="@id/pause" android:layout_width="wrap_content" android:layout_height="wrap_content" android:src="@drawable/pause" />
+        <ImageButton android:id="@id/forward" android:layout_width="wrap_content" android:layout_height="wrap_content" android:src="@drawable/forward" />
+        <ImageButton android:id="@id/stop" android:layout_width="wrap_content" android:layout_height="wrap_content" android:src="@drawable/stop" />
+        <ImageButton android:id="@id/skip" android:layout_width="wrap_content" android:layout_height="wrap_content" android:src="@drawable/skip" />
+    </LinearLayout>
+</merge>

@@ -1,0 +1,59 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="YES">Sim</string>
+    <string name="NO">Não</string>
+    <string name="OK">Ok</string>
+    <string name="RETRY_WIFI">Wi-Fi</string>
+    <string name="CARRIER">Operadora</string>
+    <string name="CANCEL">Cancelar</string>
+    <string name="EXIT">Sair</string>
+    <string name="DOWNLOADING">A descarregar...</string>
+    <string name="EXTRACTING">A instalar...</string>
+    <string name="VERIFYING">A verificar os ficheiros...</string>
+    <string name="NO_ENOUGH_SPACE_AVAILABLE">Não tens espaço suficiente no teu cartão de memória para instalar o jogo. Tens que libertar {SIZE} MB das tuas aplicações (vídeos, imagens, etc).</string>
+    <string name="NO_EXTERNAL_STORAGE_FOUND">Para descarregar o novo conteúdo, é necessário um cartão SD com pelo menos {SIZE} MB livres.</string>
+    <string name="DOWNLOAD_FILES_QUESTION">O jogo requer dados adicionais ({SIZE} MB) para poder ser executado no teu telemóvel. Queres iniciar o descarregamento agora?</string>
+    <string name="DOWNLOAD_FILES_NO_WIFI_QUESTION">Para um descarregamento mais rápido sem taxas de dados, recomendamos que uses uma ligação Wi-Fi.</string>
+    <string name="WAIT_WHILE_ACTIVATING_WIFI">Por favor, aguarda enquanto a tua ligação Wi-Fi está a ser activada.</string>
+    <string name="ERROR_NO_WIFI_DETECTED">"Não foi detectada nenhuma ligação Wi-Fi.
+Queres tentar ligar de novo o Wi-Fi agora ou usar a rede da tua operadora?"</string>
+    <string name="ERROR_NO_WIFI_DETECTED_2">Não foi detectada nenhuma ligação Wi-Fi. Vamos monitorizar a rede e iniciar o descarregamento quando uma ligação Wi-Fi for detectada. Podes também iniciar o descarregamento a qualquer momento, clicando no ícone do jogo, nas tuas aplicações.</string>
+    <string name="DOWNLOAD_FILES_THROUGH_CARRIER_QUESTION">Queres descarregar os dados restantes através da rede da tua operadora?</string>
+    <string name="DOWNLOAD_FILES_THROUGH_CARRIER_EXTRA">Dependendo do teu plano tarifário, podem ser cobradas taxas de dados.</string>
+    <string name="ERROR_NO_CARRIER_DATA_DETECTED">"Não foi detectada nenhuma ligação de dados.
+Queres activar a tua ligação Wi-Fi?"</string>
+    <string name="DOWNLOAD_ANYTIME_MESSAGE">Podes iniciar o descarregamento a qualquer momento, através do Wi-Fi ou pela rede da tua operadora, clicando no ícone do jogo, nas tuas aplicações.</string>
+    <string name="DONT_TURN_OFF_YOUR_PHONE">Por favor, não desligues o teu aparelho enquanto o descarregamento estiver a decorrer.</string>
+    <string name="DONT_TURN_OFF_YOUR_PHONE_WIFI">Por favor, não desligues o teu telemóvel enquanto o descarregamento está a ser efectuado. Estás a descarregar {SIZE} MB usando Wi-Fi.</string>
+    <string name="DOWNLOAD_SUCCESSFULLY">"O jogo foi descarregado com sucesso.
+Toca no OK e começa a jogar!"</string>
+    <string name="DOWNLOAD_FAIL">Ocorreu um problema e o descarregamento não pôde ser concluído. Queres recomeçar o descarregamento?</string>
+    <string name="DOWNLOAD_FILE_CANCEL_QUESTION">Tens a certeza de que queres cancelar o descarregamento e sair do jogo?</string>
+    <string name="STATE_SEND_REQUEST">A verificar se há actualizações...</string>
+    <string name="STATE_NO_NEW_VERSION">Não há actualizações disponíveis.</string>
+    <string name="STATE_CONFIRM_UPDATE">Queres actualizar para a nova versão?</string>
+    <string name="STATE_CONNECT_FAIL">A ligação falhou. Queres tentar de novo?</string>
+    <string name="INSTALLING">A instalar...</string>
+    <string name="LATER">Mais tarde</string>
+    <string name="ERROR_NO_WIFI_DETECTED_MINIMAL">O descarregamento tem que ser feito através de uma ligação Wi-Fi e não foi detectada nenhuma activada. Queres configurar a tua ligação Wi-Fi agora?</string>
+    <string name="DOWNLOAD_ANYTIME_MESSAGE_MINIMAL">Podes iniciar o descarregamento a qualquer momento clicando no ícone do jogo, na tua lista de aplicações.</string>
+    <string name="USE_WIFI">Wi-Fi</string>
+    <string name="USE_3G">3G</string>
+    <string name="CHECKING_REQUIRED_FILES">A verificar os ficheiros necessários...</string>
+    <string name="MKP_DEVICE_NOT_SUPPORTED_GOOGLE_WAY">"Ainda não confirmámos se o teu aparelho é compatível com este jogo.
+Podes prosseguir e experimentá-lo à mesma ou pedir um reembolso."</string>
+    <string name="MKP_DEVICE_NOT_SUPPORTED_CODE_DOWNLOAD">"O teu aparelho não é compatível com este jogo.
+Por favor, pede um reembolso."</string>
+    <string name="HEP_DEVICE_INVALID">This game can only be used on {DEVICE_NAMES}.</string>
+    <string name="DOWNLOAD_FAIL_SAMSUNG">"Ocorreu um problema e o descarregamento não pôde ser concluído. Queres reiniciar o descarregamento?
+Uma rede instável pode causar problemas quando efectuas um descarregamento."</string>
+    <string name="NO_EXTERNAL_STORAGE_FOUND_COPY">É necessário um cartão SD com pelo menos {SIZE} MB livres para instalar o jogo.</string>
+    <string name="COPY_FILES_QUESTION">O jogo requer que dados sejam copiados para o teu cartão SD, para que possa ser executado no teu telemóvel. Queres iniciar a instalação agora?</string>
+    <string name="DONT_TURN_OFF_YOUR_PHONE_COPY">Por favor, não desligues o telemóvel enquanto a instalação está a decorrer.</string>
+    <string name="COPYING">A copiar ficheiros...</string>
+    <string name="COPY_SUCCESSFULLY">"O jogo foi instalado com sucesso.
+Toca no OK e começa a jogar!"</string>
+    <string name="COPY_FILE_CANCEL_QUESTION">Tens a certeza de que queres cancelar a instalação e sair do jogo?</string>
+    <string name="SERVER_VALIDATE_REQUIRED">Por favor, activa a tua ligação internet para que possas registar a tua cópia do {GAME_NAME}.</string>
+    <string name="INVALID_LICENSE">Esta cópia do {GAME_NAME} não é original.</string>
+</resources>

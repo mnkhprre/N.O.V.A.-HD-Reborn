@@ -1,0 +1,34 @@
+<?xml version="1.0" encoding="utf-8"?>
+	<unlock_profiles>
+	<country_id>38</country_id>
+	<operator_id>42</operator_id>
+	<platform_id>4337</platform_id>
+	<billing_type>HTTP</billing_type>
+	<http_profiles>
+	<profile id="11">
+	<game_price><![CDATA[5]]></game_price>
+	<currency value="4">$</currency>
+	<url_billing><![CDATA[http://wapshop.gameloft.com/telus/tnbunlock/]]></url_billing>
+	<tnc lan="default">The cost of the full version of this game is 5$ + the cost of a data connection according to your data plan. 
+	This is not a subscription service.
+	These charges are billed to your mobile phone bill or deducted from your prepaid balance. They will appear under "Gameloft".
+	You must have sufficient credit to process your order.
+	Complete Terms and Conditions: gameloft.com/conditions</tnc>
+	<ompb_ed_sc>You enjoyed the demo? Get the full version of [game]!</ompb_ed_sc>
+	<ompb_sc>Get the full version of [game]</ompb_sc>
+	<ompb_ed_mc>You enjoyed the demo? Choose your carrier to complete the purchase of [game]</ompb_ed_mc>
+	<ompb_mcc>Choose your carrier to complete the purchase of [game]</ompb_mcc>
+	<double_optin_text></double_optin_text>
+	<double_optin_text_2></double_optin_text_2>
+	</profile>
+	</http_profiles><cc_profiles>
+	<profile id="7">
+	<game_price><![CDATA[5]]></game_price>
+	<currency value="4">$</currency>
+	<url_billing><![CDATA[https://secure.gameloft.com/wap/paybox/]]></url_billing>
+	<tnc lan="default">The cost of the full version of this game is $5. 
+	Gameloft Peace of Mind Guarantee: Gameloft uses advanced encryption security technology to protect your Credit Card information. Your email address will be used exclusively to send you the bill. 
+	Complete Terms and Conditions: gameloft.com/conditions
+	</tnc>
+	</profile>
+	</cc_profiles></unlock_profiles>

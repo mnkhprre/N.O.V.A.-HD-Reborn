@@ -1,0 +1,53 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <style name="gi_Widget.Button" parent="@android:style/Widget.Button">
+        <item name="android:textSize">@dimen/gi_text_size</item>
+        <item name="android:typeface">sans</item>
+        <item name="android:textStyle">bold</item>
+        <item name="android:textColor">@color/gi_button_text</item>
+        <item name="android:layout_gravity">center</item>
+        <item name="android:paddingLeft">15.0dp</item>
+        <item name="android:paddingRight">15.0dp</item>
+        <item name="android:focusable">false</item>
+        <item name="android:layout_width">@dimen/gi_button_width</item>
+        <item name="android:layout_height">wrap_content</item>
+        <item name="android:layout_marginLeft">10.0dp</item>
+        <item name="android:layout_marginRight">10.0dp</item>
+        <item name="android:minWidth">@dimen/gi_button_width</item>
+    </style>
+    <style name="gi_Widget.ButtonSoftkey" parent="@android:style/Widget.Button">
+        <item name="android:layout_gravity">center</item>
+        <item name="android:paddingLeft">15.0dp</item>
+        <item name="android:paddingRight">15.0dp</item>
+        <item name="android:focusable">false</item>
+        <item name="android:layout_marginLeft">10.0dp</item>
+        <item name="android:layout_marginRight">10.0dp</item>
+    </style>
+    <style name="gi_Widget.TextView" parent="@android:style/Widget.TextView">
+        <item name="android:textSize">@dimen/gi_text_size</item>
+        <item name="android:typeface">normal</item>
+        <item name="android:textColor">@color/gi_info_text</item>
+        <item name="android:gravity">center</item>
+        <item name="android:paddingLeft">@dimen/gi_textview_pading_lr</item>
+        <item name="android:paddingRight">@dimen/gi_textview_pading_lr</item>
+    </style>
+    <style name="gi_Widget.TextViewTittle" parent="@android:style/Widget.TextView">
+        <item name="android:textSize">@dimen/gi_text_tittle_size</item>
+        <item name="android:typeface">sans</item>
+        <item name="android:textStyle">bold</item>
+        <item name="android:textColor">@color/gi_tittle_text</item>
+        <item name="android:paddingLeft">@dimen/gi_textview_pading_lr</item>
+        <item name="android:paddingTop">1.0dp</item>
+        <item name="android:paddingRight">@dimen/gi_textview_pading_lr</item>
+        <item name="android:paddingBottom">1.0dp</item>
+    </style>
+    <style name="Theme.GameInstaller" parent="@android:style/Theme.NoTitleBar.Fullscreen">
+        <item name="android:buttonStyle">@style/gi_Widget.Button</item>
+        <item name="android:windowBackground">@drawable/gi_background</item>
+        <item name="android:textViewStyle">@style/gi_Widget.TextView</item>
+    </style>
+    <style name="Theme.GameInstallerNoBG" parent="@android:style/Theme.NoTitleBar.Fullscreen">
+        <item name="android:buttonStyle">@style/gi_Widget.Button</item>
+        <item name="android:textViewStyle">@style/gi_Widget.TextView</item>
+    </style>
+</resources>

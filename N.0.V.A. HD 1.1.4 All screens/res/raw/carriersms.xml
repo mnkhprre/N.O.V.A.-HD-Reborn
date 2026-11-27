@@ -1,0 +1,56 @@
+<?xml version="1.0" encoding="utf-8"?>
+<unlock_profiles>
+	<country_id>195</country_id>
+	<operator_id>21</operator_id>
+	<platform_id>4337</platform_id>
+	<billing_type>SMS</billing_type>
+	<profiles>
+	<profile id="357"><!--  SMS Profile -->
+		<name>Spain 4&#8364; HD+</name>
+		<status>qa_level_1</status>
+		<country>Spain(34:ES:ESP:214)</country>
+		<mcc>214</mcc>
+		<carrier name="Vodafone">
+		<mnc>01|06</mnc>
+		</carrier>
+		<carrier name="Telefonica-Movistar">
+		<mnc>07</mnc>
+		</carrier>
+		<carrier name="Orange">
+		<mnc>03|09</mnc>
+		</carrier>
+		<carrier name="Yoigo">
+		<mnc>04</mnc>
+		</carrier>
+		<type>0</type>
+		<languages>
+			<tnc value='ES'>Gameloft: La versión completa de este juego te costará 4&#8364; + el coste de un SMS. Deberás comprar el juego a través de un SMS y la transacción aparecerá en tu factura telefónica. Solo necesitas un SMS para comprar la versión completa. Debes tener suficiente dinero para realizar tu pedido. Correo electrónico de asistencia: support@gameloft.com</tnc>
+			<buyscreen value='ES'>Precio 4&#8364; - Se podrán aplicar las tarifas estándar por mensajería y transmisión de datos.</buyscreen>
+			<ompd_ed_sc value='ES'>¿Te ha gustado esta demo? ¡Hazte con la versión completa de [game]!</ompd_ed_sc>
+			<ompb_sc value='ES'>Hazte con la versión completa de [game].</ompb_sc>
+			<ompb_ed_mc value='ES'>¿Te ha gustado esta demo? Elige tu operadora para completar la compra de [game].</ompb_ed_mc>
+			<ompb_mcc value='ES'>Elige tu operadora para completar la compra de [game]</ompb_mcc>
+			<support value='ES'>Para cualquier comentario o pregunta, por favor envíanos un correo electrónico a la dirección support@gameloft.com o visita la sección de Asistencia en la página web de Gameloft. </support>
+			<double_optin value='ES'>¡Prueba este juego y compra la versión completa por solo 4&#8364;!</double_optin>
+			<double_optin_2 value='ES'>Juego completo 4&#8364;. Al comprarlo solo pagas con 1 sms por valor de 4&#8364;. Haz clic en comprar</double_optin_2>
+		</languages>
+		<currency value="1">&#8364;</currency>
+		<delivery-type>SMS</delivery-type>
+		<taxes>1</taxes>
+		<sms_price>4</sms_price>
+		<sms_count>1</sms_count>
+		<game_price>4</game_price>
+		<alias></alias>
+		<double_optin>1</double_optin>
+		<server_number>37273</server_number>
+	</profile>
+	</profiles>
+	<cc_profiles><!--  Credit Card Profile -->
+		<profile id="15">
+			<game_price><![CDATA[4]]></game_price>
+			<currency value="2">&#8364;</currency>
+			<url_billing><![CDATA[https://secure.gameloft.com/wap/paybox/]]></url_billing>
+			<tnc lan="default">El precio de la versión completa de este juego es de 4&#8364;.Garantía de tranquilidad Gameloft: Gameloft usa un avanzado sistema para encriptar y proteger los datos de tu tarjeta de créditos. Solo usaremos tu dirección de correo electrónico para enviarte la factura.  Consulta los términos y condiciones completos en: gameloft.com/conditions.</tnc>
+		</profile>
+	</cc_profiles>
+</unlock_profiles>

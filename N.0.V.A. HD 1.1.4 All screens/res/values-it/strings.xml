@@ -1,0 +1,59 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="YES">Sì</string>
+    <string name="NO">No</string>
+    <string name="OK">OK</string>
+    <string name="RETRY_WIFI">Riprova Wi-Fi</string>
+    <string name="CARRIER">Operatore</string>
+    <string name="CANCEL">Annulla</string>
+    <string name="EXIT">Esci</string>
+    <string name="DOWNLOADING">Download in corso...</string>
+    <string name="EXTRACTING">Installazione in corso...</string>
+    <string name="VERIFYING">Verifica file...</string>
+    <string name="NO_ENOUGH_SPACE_AVAILABLE">Spazio libero insufficiente sulla scheda di memoria per installare il gioco. Libera {SIZE} MB di spazio dalle tue applicazioni (video, immagini).</string>
+    <string name="NO_EXTERNAL_STORAGE_FOUND">È necessaria una scheda SD con almeno {SIZE} MB di spazio libero per scaricare il nuovo contenuto.</string>
+    <string name="DOWNLOAD_FILES_QUESTION">Il gioco richiede altri dati ({SIZE} MB) per poter essere eseguito sul tuo cellulare. Vuoi scaricarli ora?</string>
+    <string name="DOWNLOAD_FILES_NO_WIFI_QUESTION">Per un download più rapido e per evitare di incorrere in costi per il trasferimento dati, è consigliabile utilizzare una connessione Wi-Fi.</string>
+    <string name="WAIT_WHILE_ACTIVATING_WIFI">Attivazione della connessione Wi-Fi in corso. Attendere.</string>
+    <string name="ERROR_NO_WIFI_DETECTED">"Nessuna connessione Wi-Fi rilevata.
+Vuoi riprovare a riconnetterti alla rete Wi-Fi o vuoi utilizzare la rete del tuo operatore?"</string>
+    <string name="ERROR_NO_WIFI_DETECTED_2">"Nessuna connessione Wi-Fi rilevata. Il download verrà avviato quando verrà rilevata una connessione Wi-Fi. Puoi avviare il download in qualsiasi momento selezionando l'icona del gioco dalle tue applicazioni."</string>
+    <string name="DOWNLOAD_FILES_THROUGH_CARRIER_QUESTION">Vuoi scaricare i dati restanti utilizzando la rete del tuo operatore?</string>
+    <string name="DOWNLOAD_FILES_THROUGH_CARRIER_EXTRA">Potrebbero applicarsi le tariffe di trasferimento dati.</string>
+    <string name="ERROR_NO_CARRIER_DATA_DETECTED">"Nessuna connessione dati rilevata.
+Vuoi attivare la tua connessione Wi-Fi?"</string>
+    <string name="DOWNLOAD_ANYTIME_MESSAGE">"Puoi avviare il download in qualsiasi momento usando la connessione Wi-Fi o la rete del tuo operatore, selezionando l'icona del gioco dalle tue applicazioni."</string>
+    <string name="DONT_TURN_OFF_YOUR_PHONE">Non spegnere il cellulare durante il download.</string>
+    <string name="DONT_TURN_OFF_YOUR_PHONE_WIFI">Non spegnere il cellulare durante il download. Stai scaricando {SIZE} MB tramite Wi-Fi.</string>
+    <string name="DOWNLOAD_SUCCESSFULLY">"Il gioco è stato scaricato con successo
+Tocca OK per cominciare a giocare!"</string>
+    <string name="DOWNLOAD_FAIL">Si è verificato un problema ed il download non è stato completato. Vuoi riavviare il download?</string>
+    <string name="DOWNLOAD_FILE_CANCEL_QUESTION">Vuoi davvero annullare il download e uscire dal gioco?</string>
+    <string name="STATE_SEND_REQUEST">Ricerca della versione aggiornata in corso...</string>
+    <string name="STATE_NO_NEW_VERSION">Non è stata trovata nessuna versione aggiornata.</string>
+    <string name="STATE_CONFIRM_UPDATE">Vuoi aggiornare la versione attuale?</string>
+    <string name="STATE_CONNECT_FAIL">Errore di connessione. Vuoi riprovare?</string>
+    <string name="INSTALLING">Installazione in corso...</string>
+    <string name="LATER">Più tardi</string>
+    <string name="ERROR_NO_WIFI_DETECTED_MINIMAL">Devi eseguire il download attraverso una connessione Wi-Fi, ma non è stata rilevata alcuna connessione attiva. Vuoi configurare la connessione Wi-Fi ora?</string>
+    <string name="DOWNLOAD_ANYTIME_MESSAGE_MINIMAL">"Puoi avviare il download in qualunque momento selezionando l'icona del gioco nella lista delle applicazioni."</string>
+    <string name="USE_WIFI">Wi-Fi</string>
+    <string name="USE_3G">"Rete dell'operatore"</string>
+    <string name="CHECKING_REQUIRED_FILES">Controllo file necessari in corso...</string>
+    <string name="MKP_DEVICE_NOT_SUPPORTED_GOOGLE_WAY">"La compatibilità del tuo dispositivo con questo gioco non è stata confermata.
+Puoi decidere di continuare e provare comunque, o puoi chiedere un rimborso."</string>
+    <string name="MKP_DEVICE_NOT_SUPPORTED_CODE_DOWNLOAD">"Il gioco non è compatibile con il tuo dispositivo.
+Ti preghiamo di richiedere il rimborso."</string>
+    <string name="HEP_DEVICE_INVALID">Il gioco può essere utilizzato solo su {DEVICE_NAMES}.</string>
+    <string name="DOWNLOAD_FAIL_SAMSUNG">"Il download non è stato completato a causa di un problema. Vuoi riavviarlo?
+Una connessione instabile può causare problemi durante il download."</string>
+    <string name="NO_EXTERNAL_STORAGE_FOUND_COPY">È richiesta una scheda SD con almeno {SIZE} MB liberi per poter installare il gioco.</string>
+    <string name="COPY_FILES_QUESTION">"È necessario copiare dei dati sulla scheda SD per poter eseguire il gioco. Vuoi eseguire l'installazione ora?"</string>
+    <string name="DONT_TURN_OFF_YOUR_PHONE_COPY">"Non spegnere il telefono mentre l'installazione è in corso."</string>
+    <string name="COPYING">Copia in corso...</string>
+    <string name="COPY_SUCCESSFULLY">"Il gioco è stato installato.
+Tocca OK e inizia a giocare!"</string>
+    <string name="COPY_FILE_CANCEL_QUESTION">"Sei sicuro di voler annullare l'installazione e uscire dal gioco?"</string>
+    <string name="SERVER_VALIDATE_REQUIRED">Attiva la connessione a internet per registrare la tua copia di {GAME_NAME}.</string>
+    <string name="INVALID_LICENSE">Questa copia di {GAME_NAME} non è originale.</string>
+</resources>

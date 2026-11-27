@@ -1,0 +1,49 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="YES">是</string>
+    <string name="NO">否</string>
+    <string name="OK">確定</string>
+    <string name="RETRY_WIFI">重試無線網路</string>
+    <string name="CARRIER">營運商</string>
+    <string name="CANCEL">取消</string>
+    <string name="EXIT">退出</string>
+    <string name="DOWNLOADING">正在下載…</string>
+    <string name="EXTRACTING">正在安装……</string>
+    <string name="VERIFYING">正在確認檔案……</string>
+    <string name="NO_ENOUGH_SPACE_AVAILABLE">記憶卡沒有安裝遊戲所需的足夠空間。請將應用程式（視訊﹐影像）刪除 {SIZE} MB。</string>
+    <string name="NO_EXTERNAL_STORAGE_FOUND">SD 卡上至少需要有 {SIZE} MB 的可用空間才能下載新內容。</string>
+    <string name="DOWNLOAD_FILES_QUESTION">遊戲需要有額外 ({SIZE} MB) 資料才能在您的手機上執行。您要立即開始下載嗎﹖</string>
+    <string name="DOWNLOAD_FILES_NO_WIFI_QUESTION">建議您轉用無線網路連線以加快下載速度且無須負擔資料傳輸費用。</string>
+    <string name="WAIT_WHILE_ACTIVATING_WIFI">正在接駁無線上網﹐請稍等。</string>
+    <string name="ERROR_NO_WIFI_DETECTED">"偵測不到無線網路連線。
+您想再次嘗試無線網路連線或是透過營運商網路連線以繼續進行﹖"</string>
+    <string name="ERROR_NO_WIFI_DETECTED_2">偵測不到無線網路連線。我們會繼續監視網路，在偵測到無線網路連線時開始進行下載。您也可以按一下應用程式上的遊戲圖示以隨時開始下載。</string>
+    <string name="DOWNLOAD_FILES_THROUGH_CARRIER_QUESTION">您要透過營運商網路來下載剩下的資料嗎？</string>
+    <string name="DOWNLOAD_FILES_THROUGH_CARRIER_EXTRA">依照您的資料話費方案而定，可能會收取資料傳輸費用。</string>
+    <string name="ERROR_NO_CARRIER_DATA_DETECTED">"偵測不到資料連線。
+您要啟用無線網路連線嗎？"</string>
+    <string name="DOWNLOAD_ANYTIME_MESSAGE">您可隨時按一下應用程式中的遊戲圖示，透過無線網路或營運商網路開始下載。</string>
+    <string name="DONT_TURN_OFF_YOUR_PHONE">下載過程中，請勿關閉手機。</string>
+    <string name="DONT_TURN_OFF_YOUR_PHONE_WIFI">下載過程中﹐請勿關閉手機。您正使用無線網路下載 {SIZE} MB。</string>
+    <string name="DOWNLOAD_SUCCESSFULLY">"遊戲已成功下載。
+請觸碰「確定」並開始進行遊戲！"</string>
+    <string name="DOWNLOAD_FAIL">發生問題，未能成功完成下載。您要重新開始下載嗎？</string>
+    <string name="DOWNLOAD_FILE_CANCEL_QUESTION">您是否確定要取消下載並退出遊戲？</string>
+    <string name="STATE_SEND_REQUEST">查看新版本…</string>
+    <string name="STATE_NO_NEW_VERSION">並未有新版本進行更新。</string>
+    <string name="STATE_CONFIRM_UPDATE">您要更新為新版本嗎？</string>
+    <string name="STATE_CONNECT_FAIL">連線失敗。是否重試嗎？</string>
+    <string name="INSTALLING">正在安裝…</string>
+    <string name="LATER">稍後</string>
+    <string name="ERROR_NO_WIFI_DETECTED_MINIMAL">下載必須透過無線網路連線才能執行，但偵測不到任何可使用的連線。您是否要立即設定無線網路連線？</string>
+    <string name="DOWNLOAD_ANYTIME_MESSAGE_MINIMAL">隨時按一下應用程式清單中的遊戲圖示，即可開始下載。</string>
+    <string name="USE_WIFI">Wi-Fi 無線網路</string>
+    <string name="USE_3G">營運商網路</string>
+    <string name="CHECKING_REQUIRED_FILES">正在檢查所需檔案…</string>
+    <string name="MKP_DEVICE_NOT_SUPPORTED_GOOGLE_WAY">"您的 裝置尚未確定為與此遊戲相容。
+您 可以選擇繼續嘗試，或是要求退款。"</string>
+    <string name="MKP_DEVICE_NOT_SUPPORTED_CODE_DOWNLOAD">您的裝置不能與此遊戲相容，請要求退款。</string>
+    <string name="HEP_DEVICE_INVALID">This game can only be used on {DEVICE_NAMES}.</string>
+    <string name="DOWNLOAD_FAIL_SAMSUNG">"發生問題，無法順利完成下載。您要重新開始下載嗎？
+下載時，網路不穩定可能會造成問題。"</string>
+</resources>

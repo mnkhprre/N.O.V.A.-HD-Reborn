@@ -1,0 +1,97 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="YES">はい</string>
+    <string name="NO">いいえ</string>
+    <string name="OK">OK</string>
+    <string name="RETRY_WIFI">Wi-Fi</string>
+    <string name="CARRIER">3G</string>
+    <string name="CANCEL">キャンセル</string>
+    <string name="EXIT">終了</string>
+    <string name="DOWNLOADING">ダウンロード中…</string>
+    <string name="EXTRACTING">インストール中…</string>
+    <string name="VERIFYING">ファイルを確認中……</string>
+    <string name="NO_ENOUGH_SPACE_AVAILABLE">"このゲームをインストールするには、
+メモリーカードに{SIZE}MBの
+空き容量が必要です"</string>
+    <string name="NO_EXTERNAL_STORAGE_FOUND">"新しいコンテンツを
+ダウンロードするには
+{SIZE}MB以上空きのある
+SDカードが必要です"</string>
+    <string name="DOWNLOAD_FILES_QUESTION">"このゲームをプレイするには
+追加データ（{SIZE} MB）が必要です
+ダウンロードしますか？"</string>
+    <string name="DOWNLOAD_FILES_NO_WIFI_QUESTION">"短時間でダウンロードするには、
+Wi-Fi接続に切り替えることをお勧めします"</string>
+    <string name="WAIT_WHILE_ACTIVATING_WIFI">"Wi-Fi接続を有効にしています
+しばらくお待ちください"</string>
+    <string name="ERROR_NO_WIFI_DETECTED">"ネットワークが見つかりません
+接続方法をお選びください"</string>
+    <string name="ERROR_NO_WIFI_DETECTED_2">"Wi-Fi接続が見つかりません
+Wi-Fi接続が見つかり次第、
+ダウンロードを開始します"</string>
+    <string name="DOWNLOAD_FILES_THROUGH_CARRIER_QUESTION">"お持ちの携帯電話のネットワークで、
+残りのデータをダウンロードしますか？"</string>
+    <string name="DOWNLOAD_FILES_THROUGH_CARRIER_EXTRA">"ご契約内容によっては
+追加料金がかかる
+場合があります"</string>
+    <string name="ERROR_NO_CARRIER_DATA_DETECTED">"データ接続が見つかりません
+Wi-Fi接続を有効にしますか？"</string>
+    <string name="DOWNLOAD_ANYTIME_MESSAGE">"アプリケーションを終了します
+ダウンロードを再開するには、
+アプリアイコンを
+クリックしてください"</string>
+    <string name="DONT_TURN_OFF_YOUR_PHONE">"ダウンロード中は本体の電源を
+切らないでください"</string>
+    <string name="DONT_TURN_OFF_YOUR_PHONE_WIFI">"ダウンロード中は本体の電源を
+切らないでください
+Wi-Fi接続でダウンロードしています
+（容量：{SIZE}MB）"</string>
+    <string name="DOWNLOAD_SUCCESSFULLY">"ゲームがダウンロードされました
+OKにタッチすると、プレイできます"</string>
+    <string name="DOWNLOAD_FAIL">"問題が生じたため、
+ダウンロードできませんでした
+再度やり直しますか？"</string>
+    <string name="DOWNLOAD_FILE_CANCEL_QUESTION">"ダウンロードをキャンセルして、
+ゲームを終了します
+よろしいですか？"</string>
+    <string name="STATE_SEND_REQUEST">アップデートを確認中です…</string>
+    <string name="STATE_NO_NEW_VERSION">アップデートはありません</string>
+    <string name="STATE_CONFIRM_UPDATE">最新版にアップデートしますか？</string>
+    <string name="STATE_CONNECT_FAIL">"接続に失敗しました
+リトライしますか？"</string>
+    <string name="INSTALLING">インストール中…</string>
+    <string name="LATER">後で</string>
+    <string name="ERROR_NO_WIFI_DETECTED_MINIMAL">"ダウンロードするには
+Wi-Fi接続を有効にしてください
+Wi-Fi接続を設定しますか？"</string>
+    <string name="DOWNLOAD_ANYTIME_MESSAGE_MINIMAL">"アプリケーションを終了します
+ダウンロードを再開するには、
+アプリアイコンを
+クリックしてください"</string>
+    <string name="USE_WIFI">Wi-Fi</string>
+    <string name="USE_3G">3G</string>
+    <string name="CHECKING_REQUIRED_FILES">指定ファイルを確認中……</string>
+    <string name="MKP_DEVICE_NOT_SUPPORTED_GOOGLE_WAY">"お持 ちの機種ではこのゲームをプレイ できない可能性があります。
+プロセスを続行するか、返金請求してください。"</string>
+    <string name="MKP_DEVICE_NOT_SUPPORTED_CODE_DOWNLOAD">"お持ちの機種ではこのゲームをプレイできません。
+返金を請求してください。"</string>
+    <string name="HEP_DEVICE_INVALID">This game can only be used on {DEVICE_NAMES}.</string>
+    <string name="DOWNLOAD_FAIL_SAMSUNG">"問題が発生したためダウンロードできませんでした
+ダウンロードを再スタートしますか？
+ネットワークが不安定な場合、ダウンロード中に問題が発生する可能性があります。"</string>
+    <string name="NO_EXTERNAL_STORAGE_FOUND_COPY">"ゲームをインストールするには
+{SIZE}MB以上空きのある
+SDカードが必要です"</string>
+    <string name="COPY_FILES_QUESTION">"ゲームをプレイするにはSDカードへデータをコピーする必要があります
+インストールを開始しますか？"</string>
+    <string name="DONT_TURN_OFF_YOUR_PHONE_COPY">"インストール中は本体の電源を
+切らないでください"</string>
+    <string name="COPYING">ファイルをコピーしています…</string>
+    <string name="COPY_SUCCESSFULLY">"ゲームのインストールが完了しました
+OKにタッチするとプレイできます"</string>
+    <string name="COPY_FILE_CANCEL_QUESTION">"インストールをキャンセルして
+ゲームを終了します
+よろしいですか？"</string>
+    <string name="SERVER_VALIDATE_REQUIRED">『{GAME_NAME}』を登録するには、インターネット接続を有効にしてください</string>
+    <string name="INVALID_LICENSE">正規の『{GAME_NAME}』ではありません</string>
+</resources>

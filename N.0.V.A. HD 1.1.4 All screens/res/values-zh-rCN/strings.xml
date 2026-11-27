@@ -1,0 +1,52 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="YES">是</string>
+    <string name="NO">否</string>
+    <string name="OK">确定</string>
+    <string name="RETRY_WIFI">重试WLAN</string>
+    <string name="CARRIER">运营商</string>
+    <string name="CANCEL">取消</string>
+    <string name="EXIT">退出</string>
+    <string name="DOWNLOADING">下载中……</string>
+    <string name="EXTRACTING">正在安装……</string>
+    <string name="VERIFYING">文件校验中……</string>
+    <string name="NO_ENOUGH_SPACE_AVAILABLE">您的存储卡中没有足够空间用以安装游戏。您需要删除应用程序（视频、图像）释放出{SIZE}MB空间。</string>
+    <string name="NO_EXTERNAL_STORAGE_FOUND">要下载新内容，您需要一张至少有{SIZE}MB空间的SD卡。</string>
+    <string name="DOWNLOAD_FILES_QUESTION">游戏需要添加数据({SIZE} MB)才能在您的手机上运行。您要立即开始下载吗？</string>
+    <string name="DOWNLOAD_FILES_NO_WIFI_QUESTION">为了更快速地下载以及不产生数据费用，我们建议您切换至WLAN连接。</string>
+    <string name="WAIT_WHILE_ACTIVATING_WIFI">WLAN连接正在启用，请稍候片刻</string>
+    <string name="ERROR_NO_WIFI_DETECTED">"未检测到WLAN连接。
+您要立即重试连接WLAN，还是检查您的运营商网络？"</string>
+    <string name="ERROR_NO_WIFI_DETECTED_2">未检测到WLAN连接。我们会监测网络，并在检测到WLAN连接后开始下载。您也可以点击应用程序中的游戏图标随时开始下载。</string>
+    <string name="DOWNLOAD_FILES_THROUGH_CARRIER_QUESTION">您想要通过运营商网络下载剩余的数据吗？</string>
+    <string name="DOWNLOAD_FILES_THROUGH_CARRIER_EXTRA">根据您的数据计划，可能会产生相应的数据费用。</string>
+    <string name="ERROR_NO_CARRIER_DATA_DETECTED">"未检测到数据连接。
+您要启用WLAN连接吗？"</string>
+    <string name="DOWNLOAD_ANYTIME_MESSAGE">您可以点击应用程序中的游戏图标，通过WLAN或运营商网络随时开始下载。</string>
+    <string name="DONT_TURN_OFF_YOUR_PHONE">下载进行过程中请不要关闭您的手机。</string>
+    <string name="DONT_TURN_OFF_YOUR_PHONE_WIFI">下载进行过程中请不要关闭您的手机。您使用WLAN下载了{SIZE}MB。</string>
+    <string name="DOWNLOAD_SUCCESSFULLY">"游戏下载成功。
+触摸“确定”开始游戏！"</string>
+    <string name="DOWNLOAD_FAIL">下载中遇到了问题，无法顺利完成下载。要重新开始下载吗？</string>
+    <string name="DOWNLOAD_FILE_CANCEL_QUESTION">您确定要取消下载并退出游戏吗？</string>
+    <string name="STATE_SEND_REQUEST">检查新版本中……</string>
+    <string name="STATE_NO_NEW_VERSION">已更新至最新版本。</string>
+    <string name="STATE_CONFIRM_UPDATE">您要更新至新版本吗？</string>
+    <string name="STATE_CONNECT_FAIL">连接失败。您要重试吗？</string>
+    <string name="INSTALLING">正在安装……</string>
+    <string name="LATER">稍后</string>
+    <string name="ERROR_NO_WIFI_DETECTED_MINIMAL">下载须通过WLAN连接，当前未检测到任何可用连接。想要立即配置您的WLAN连接吗？</string>
+    <string name="DOWNLOAD_ANYTIME_MESSAGE_MINIMAL">你可以点击应用列表里的游戏图标随时开始下载。</string>
+    <string name="USE_WIFI">WLAN</string>
+    <string name="USE_3G">运营商网络</string>
+    <string name="CHECKING_REQUIRED_FILES">正在校验必需文件……</string>
+    <string name="MKP_DEVICE_NOT_SUPPORTED_GOOGLE_WAY">"未确认 您的设备是否与该游戏兼容。
+你可以选择继续尝试或请求退款。"</string>
+    <string name="MKP_DEVICE_NOT_SUPPORTED_CODE_DOWNLOAD">"您的设备无法兼容该游戏。
+请申请退款。"</string>
+    <string name="HEP_DEVICE_INVALID">This game can only be used on {DEVICE_NAMES}.</string>
+    <string name="DOWNLOAD_FAIL_SAMSUNG">"下载过程中出现了问题，无法成功完成下载。您要重新开始下载吗？
+网络不稳定可能会造成下载失败"</string>
+    <string name="SERVER_VALIDATE_REQUIRED">请启用您的互联网连接，对{GAME_NAME}进行注册。</string>
+    <string name="INVALID_LICENSE">{GAME_NAME}并不是正规版本。</string>
+</resources>

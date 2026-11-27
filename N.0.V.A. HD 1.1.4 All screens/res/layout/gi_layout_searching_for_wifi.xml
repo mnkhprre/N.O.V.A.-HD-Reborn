@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout android:gravity="center" android:id="@id/LinearLayout01" android:background="@drawable/gi_background" android:layout_width="match_parent" android:layout_height="match_parent" style="@style/Theme.GameInstaller"
+  xmlns:android="http://schemas.android.com/apk/res/android">
+    <FrameLayout android:id="@id/FrameLayout00" android:layout_width="match_parent" android:layout_height="match_parent">
+        <FrameLayout android:id="@id/FrameLayoutDialog" android:padding="@dimen/gi_main_layout_padding" android:layout_width="match_parent" android:layout_height="match_parent">
+            <FrameLayout android:id="@id/FrameLayout01" android:background="@drawable/gi_alpha_box" android:layout_width="match_parent" android:layout_height="match_parent">
+                <Button android:layout_gravity="right|bottom" android:id="@id/bt_ly_searching_for_wifi_cancel" android:layout_width="wrap_content" android:layout_height="wrap_content" android:layout_marginRight="@dimen/gi_menu_bottom_lr_margin" android:layout_marginBottom="@dimen/gi_menu_bottom" android:text="@string/CANCEL" />
+                <LinearLayout android:gravity="center" android:orientation="vertical" android:id="@id/RelativeLayout02" android:layout_width="match_parent" android:layout_height="match_parent">
+                    <TextView android:layout_gravity="center" android:id="@id/txMessageInfo" android:layout_width="wrap_content" android:layout_height="wrap_content" android:text="@string/WAIT_WHILE_ACTIVATING_WIFI" />
+                    <ProgressBar android:layout_gravity="center" android:id="@id/ProgressBar01" android:fadingEdge="none" android:drawingCacheQuality="high" android:layout_width="wrap_content" android:layout_height="wrap_content" android:layout_marginTop="@dimen/progress_bar_indet_gap" style="?android:attr/progressBarStyleInverse" />
+                </LinearLayout>
+            </FrameLayout>
+        </FrameLayout>
+        <FrameLayout android:layout_gravity="top" android:id="@id/FrameLayoutHeader" android:background="@drawable/gi_top_bar" android:layout_width="match_parent" android:layout_height="@dimen/gi_tittle_bar_size_h">
+            <TextView android:layout_gravity="center" android:id="@id/txtTittleMessage" android:layout_width="wrap_content" android:layout_height="wrap_content" android:text="@string/app_name" style="@style/gi_Widget.TextViewTittle" />
+            <ImageView android:id="@id/ImageView01" android:paddingLeft="@dimen/gi_logo_tittle_gap" android:paddingTop="@dimen/gi_logo_tittle_gap" android:layout_width="wrap_content" android:layout_height="wrap_content" android:src="@drawable/gi_logo_tittle" />
+        </FrameLayout>
+    </FrameLayout>
+</LinearLayout>

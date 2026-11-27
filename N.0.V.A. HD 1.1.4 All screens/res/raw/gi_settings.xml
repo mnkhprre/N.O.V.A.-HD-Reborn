@@ -1,0 +1,96 @@
+﻿<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<settings>
+
+	<carriers>
+		<carrier name="default">
+			<wifi_only>1</wifi_only>
+		</carrier>
+		<carrier name="sprint">
+			<wifi_only>0</wifi_only>
+		</carrier>
+	</carriers>
+	
+	<devices>
+		<device>
+			<manufacturer name="default">
+				<pvrt_textures>1</pvrt_textures>
+			</manufacturer>
+		</device>
+
+		<device>
+			<manufacturer name="samsung">
+				<pvrt_textures>1</pvrt_textures>
+			</manufacturer>
+		</device>
+		
+		<!-- sample to override manufacturer value for an specific device -->
+		<device>
+			<manufacturer name="samsung">
+				<model name="modelxxx">
+					<atc_textures>1</atc_textures> 
+				</model>
+			</manufacturer>
+		</device>
+		
+		<device>
+			<manufacturer name="motorola">
+				<pvrt_textures>1</pvrt_textures>
+			</manufacturer>
+		</device>
+		
+		<!-- Motorola Atrix 4G, using DXT -->
+		<device>
+			<manufacturer name="motorola">
+				<model name="mb860">
+					<dxt_textures>1</dxt_textures> 
+				</model>
+			</manufacturer>
+		</device>
+		
+		<device>
+			<manufacturer name="htc">
+				<atc_textures>1</atc_textures>
+			</manufacturer>
+		</device>
+		
+		<device>
+			<manufacturer name="acer">
+				<atc_textures>1</atc_textures>
+			</manufacturer>
+		</device>
+
+		<device>
+			<manufacturer name="sharp">
+				<atc_textures>1</atc_textures>
+			</manufacturer>
+		</device>
+		
+		<device>
+			<manufacturer name="toshiba">
+				<atc_textures>1</atc_textures>
+			</manufacturer>
+		</device>
+
+		<device>
+			<manufacturer name="lge">
+				<dxt_textures>1</dxt_textures>
+			</manufacturer>
+		</device>
+
+		<device>
+			<manufacturer name="sony ericsson">
+				<atc_textures>1</atc_textures>
+			</manufacturer>
+		</device>
+		
+		<!-- Kyocera M9300, using ATC -->
+		<device>
+			<manufacturer name="kyocera">
+				<model name="m9300">
+					<atc_textures>1</atc_textures> 
+				</model>
+			</manufacturer>
+		</device>		
+	</devices>
+	
+</settings>

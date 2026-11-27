@@ -1,0 +1,51 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="YES">是</string>
+    <string name="NO">不是</string>
+    <string name="OK">確定</string>
+    <string name="RETRY_WIFI">再試無線上網</string>
+    <string name="CARRIER">載波</string>
+    <string name="CANCEL">取消</string>
+    <string name="EXIT">出口</string>
+    <string name="DOWNLOADING">正在下載…</string>
+    <string name="EXTRACTING">正在安装……</string>
+    <string name="VERIFYING">正在驗證檔案……</string>
+    <string name="NO_ENOUGH_SPACE_AVAILABLE">您的記憶卡的容量不足夠安裝遊戲。請把應用程式的（視像﹐圖像）的{SIZE} MB刪除。</string>
+    <string name="NO_EXTERNAL_STORAGE_FOUND">您需要至少{SIZE} MB的SD卡容量才能下載新的內容。</string>
+    <string name="DOWNLOAD_FILES_QUESTION">遊戲需要額外數據({SIZE} MB)，才能在您的手機上運作。您要立即開始下載嗎？</string>
+    <string name="DOWNLOAD_FILES_NO_WIFI_QUESTION">為了下載更快，而且毋須支付數據費用，我們建議切換至 Wi-Fi 連線。</string>
+    <string name="WAIT_WHILE_ACTIVATING_WIFI">無線上網連線正在啟動﹐請稍等。</string>
+    <string name="ERROR_NO_WIFI_DETECTED">"無法查出無線上網連線。
+您想重新連接無線上網還是經過載波網路連線﹖"</string>
+    <string name="ERROR_NO_WIFI_DETECTED_2">無法查出無線上網連線。我們會監察網路﹐當查到無線上網連線之後就會啟用下載。您也可以按照應用程式的遊戲Icon﹐在任何時候開始下載。</string>
+    <string name="DOWNLOAD_FILES_THROUGH_CARRIER_QUESTION">您想經過載波網路下載餘下的數據嗎﹖</string>
+    <string name="DOWNLOAD_FILES_THROUGH_CARRIER_EXTRA">可能會根據您的數據計劃收取數據費用。</string>
+    <string name="ERROR_NO_CARRIER_DATA_DETECTED">"無法查到數據連線。
+您想啟動無線上網連線嗎﹖"</string>
+    <string name="DOWNLOAD_ANYTIME_MESSAGE">您也可以在應用程式的遊戲Icon按一下﹐隨時經過無線上網或者載波網絡開始下載。</string>
+    <string name="DONT_TURN_OFF_YOUR_PHONE">下載過程中﹐請勿關掉设备。</string>
+    <string name="DONT_TURN_OFF_YOUR_PHONE_WIFI">下載過程中﹐請勿關掉電話。您正在使用無線上網下載了 {SIZE} MB。</string>
+    <string name="DOWNLOAD_SUCCESSFULLY">"成功下載遊戲。
+按確定就可以玩了﹗"</string>
+    <string name="DOWNLOAD_FAIL">出現問題﹐不能成功完成下載。您想重新開始下載嗎﹖</string>
+    <string name="DOWNLOAD_FILE_CANCEL_QUESTION">是否確定取消下載並且離開﹖</string>
+    <string name="STATE_SEND_REQUEST">查看新版本…</string>
+    <string name="STATE_NO_NEW_VERSION">沒有新版本可以更新。</string>
+    <string name="STATE_CONFIRM_UPDATE">您想升級到新版本嗎﹖</string>
+    <string name="STATE_CONNECT_FAIL">連線失敗。您想再試嗎﹖</string>
+    <string name="INSTALLING">正在安裝…</string>
+    <string name="LATER">遲一點</string>
+    <string name="ERROR_NO_WIFI_DETECTED_MINIMAL">必須經過無線上網連線下載。我們無法查到活躍連線。您想立刻裝配無線上網連線嗎﹖</string>
+    <string name="DOWNLOAD_ANYTIME_MESSAGE_MINIMAL">您可以從應用程式的列表之內按一下遊戲Icon﹐就可以在任何時候開始下載。</string>
+    <string name="USE_WIFI">Wi-Fi無線上網</string>
+    <string name="USE_3G">網絡商網絡</string>
+    <string name="CHECKING_REQUIRED_FILES">正在校验必需文件……</string>
+    <string name="HEP_DEVICE_INVALID">This game can only be used on {DEVICE_NAMES}.</string>
+    <string name="NO_EXTERNAL_STORAGE_FOUND_COPY">An SD card with at least {SIZE} MB free is required in order to install the new content.</string>
+    <string name="COPY_FILES_QUESTION">The game requires additional data to be copied to your SD card in order to run on your phone. Do you want to launch the installation now?</string>
+    <string name="DONT_TURN_OFF_YOUR_PHONE_COPY">Please do not turn off your phone while the installation is in progress.</string>
+    <string name="COPYING">Copying Files...</string>
+    <string name="COPY_SUCCESSFULLY">"The game has been successfully installed.
+Touch OK and start playing!"</string>
+    <string name="COPY_FILE_CANCEL_QUESTION">Are you sure that you want to cancel the installation and exit the game?</string>
+</resources>

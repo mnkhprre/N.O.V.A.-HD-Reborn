@@ -1,0 +1,49 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="YES">Tak</string>
+    <string name="NO">Nie</string>
+    <string name="OK">OK</string>
+    <string name="RETRY_WIFI">Ponów Wi-Fi</string>
+    <string name="CARRIER">Operator</string>
+    <string name="CANCEL">Anuluj</string>
+    <string name="EXIT">Wyjście</string>
+    <string name="DOWNLOADING">Pobieranie...</string>
+    <string name="EXTRACTING">Instalowanie...</string>
+    <string name="VERIFYING">Weryfikacja plików...</string>
+    <string name="NO_ENOUGH_SPACE_AVAILABLE">Nie masz dość miejsca na karcie pamięci, by zainstalować grę. Musisz usunąć {SIZE} MB ze swoich aplikacji (filmów, obrazków).</string>
+    <string name="NO_EXTERNAL_STORAGE_FOUND">Aby pobrać nową zawartość, potrzebna jest karta SD z co najmniej {SIZE} MB wolnego miejsca.</string>
+    <string name="DOWNLOAD_FILES_QUESTION">Do uruchomienia na twoim telefonie, gra wymaga dodatkowej przestrzeni w pamięci ({SIZE} MB). Czy chcesz teraz rozpocząć pobieranie?</string>
+    <string name="DOWNLOAD_FILES_NO_WIFI_QUESTION">Aby pobierać szybciej i bez dodatkowych opłat za dane, zalecamy przełączenie w tryb Wi-Fi.</string>
+    <string name="WAIT_WHILE_ACTIVATING_WIFI">Proszę czekać na inicjalizację połączenia Wi-Fi.</string>
+    <string name="ERROR_NO_WIFI_DETECTED">"Nie wykryto połączenia Wi-Fi.
+Chcesz ponowić połączenie Wi-Fi teraz czy spróbować połączyć się przez sieć operatora?"</string>
+    <string name="ERROR_NO_WIFI_DETECTED_2">Nie wykryto połączenia Wi-Fi. Będziemy sprawdzali dostępność sieci i uruchomimy pobieranie, gdy tylko wykryte zostanie połączenie Wi-Fi. Możesz też rozpocząć pobieranie w dowolnej chwili, klikając na ikonę gry w dziale aplikacji.</string>
+    <string name="DOWNLOAD_FILES_THROUGH_CARRIER_QUESTION">Chcesz pobrać pozostałe dane przez sieć operatora?</string>
+    <string name="DOWNLOAD_FILES_THROUGH_CARRIER_EXTRA">Mogą zostać naliczone opłaty za dane, w zależności od twojego planu taryfowego</string>
+    <string name="ERROR_NO_CARRIER_DATA_DETECTED">"Nie wykryto połączenia danych.
+Chcesz włączyć połączenie Wi-Fi?"</string>
+    <string name="DOWNLOAD_ANYTIME_MESSAGE">Możesz rozpocząć pobieranie w dowolnym momencie poprzez Wi-Fi albo sieć operatora, klikając na ikonę gry w dziale aplikacji.</string>
+    <string name="DONT_TURN_OFF_YOUR_PHONE">Nie wyłączaj telefonu w trakcie pobierania.</string>
+    <string name="DONT_TURN_OFF_YOUR_PHONE_WIFI">Nie wyłączaj telefonu w trakcie pobierania. Pobierasz {SIZE} MB przez Wi-Fi.</string>
+    <string name="DOWNLOAD_SUCCESSFULLY">"Gra została pobrana poprawnie.
+Dotknij OK, by rozpocząć grę!"</string>
+    <string name="DOWNLOAD_FAIL">Wystąpił błąd i nie udało się poprawnie pobrać gry. Chcesz rozpocząć pobieranie od początku?</string>
+    <string name="DOWNLOAD_FILE_CANCEL_QUESTION">Na pewno chcesz anulować pobieranie i opuścić grę?</string>
+    <string name="STATE_SEND_REQUEST">Szukanie nowej wersji...</string>
+    <string name="STATE_NO_NEW_VERSION">Nie istnieje nowsza wersja.</string>
+    <string name="STATE_CONFIRM_UPDATE">Czy chcesz zaktualizować do nowszej wersji?</string>
+    <string name="STATE_CONNECT_FAIL">Połączenie nieudane. Chcesz ponowić?</string>
+    <string name="INSTALLING">Instalowanie...</string>
+    <string name="LATER">Później</string>
+    <string name="ERROR_NO_WIFI_DETECTED_MINIMAL">Pobranie gry musi nastąpić poprzez połączenie Wi-Fi, a nie zostało wykryte połączenie tego typu. Chcesz teraz skonfigurować połączenie Wi-Fi?</string>
+    <string name="DOWNLOAD_ANYTIME_MESSAGE_MINIMAL">Możesz rozpocząć pobieranie w dowolnym momencie, klikając na ikonę gry w dziale aplikacji.</string>
+    <string name="USE_WIFI">Wi-Fi</string>
+    <string name="USE_3G">Sieć operatora</string>
+    <string name="NO_EXTERNAL_STORAGE_FOUND_COPY">Aby zainstalować nową zawartość, wymagana jest karta SD z co najmniej {SIZE} MB wolnego miejsca.</string>
+    <string name="COPY_FILES_QUESTION">Aby uruchomić grę na twoim urządzeniu potrzebna jest dodatkowa przestrzeń ({SIZE} MB) na karcie SD. Chcesz teraz rozpocząć pobieranie?</string>
+    <string name="DONT_TURN_OFF_YOUR_PHONE_COPY">Nie wyłączaj urządzenia w trakcie instalacji.</string>
+    <string name="COPYING">Kopiowanie plików...</string>
+    <string name="COPY_SUCCESSFULLY">"Gra została zainstalowana prawidłowo.
+Dotknij OK i rozpocznij grę!"</string>
+    <string name="COPY_FILE_CANCEL_QUESTION">Na pewno chcesz anulować instalację i opuścić grę?</string>
+</resources>

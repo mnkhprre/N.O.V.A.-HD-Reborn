@@ -1,0 +1,3 @@
+PVRT:http://dl.gameloft.com/hdplus/android/nova/Motorola_XOOM/ml/1.1.1/NOVA_Ver101_DXT.zip
+ATC:http://dl.gameloft.com/hdplus/android/nova/Motorola_XOOM/ml/1.1.1/NOVA_Ver101_DXT.zip
+DXT:http://dl.gameloft.com/hdplus/android/nova/Motorola_XOOM/ml/1.1.1/NOVA_Ver101_DXT.zip

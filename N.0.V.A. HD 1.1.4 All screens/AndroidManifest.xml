@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="utf-8"?>
+<manifest xmlns:android="http://schemas.android.com/apk/res/android" package="com.gameloft.android.TBFV.GloftNOHP.ML" platformBuildVersionCode="23" platformBuildVersionName="6.0-2438415">
+    <uses-feature android:name="android.hardware.touchscreen.multitouch"/>
+    <uses-permission android:name="android.permission.WRITE_EXTERNAL_STORAGE"/>
+    <uses-permission android:name="android.permission.MODIFY_AUDIO_SETTINGS"/>
+    <uses-permission android:name="android.permission.RESTART_PACKAGES"/>
+    <uses-permission android:name="android.permission.WAKE_LOCK"/>
+    <uses-permission android:name="android.permission.ACCESS_NETWORK_STATE"/>
+    <uses-permission android:name="android.permission.ACCESS_WIFI_STATE"/>
+    <uses-permission android:name="android.permission.INTERNET"/>
+    <uses-permission android:name="android.permission.CHANGE_WIFI_STATE"/>
+    <uses-permission android:name="android.permission.READ_PHONE_STATE"/>
+    <uses-permission android:name="android.permission.CHANGE_NETWORK_STATE"/>
+    <application android:debuggable="false" android:icon="@drawable/icon" android:label="@string/icon_label" android:theme="@android:style/Theme.NoTitleBar.Fullscreen">
+        <activity android:clearTaskOnLaunch="true" android:configChanges="mcc|mnc|locale|touchscreen|keyboard|keyboardHidden|navigation|orientation|screenLayout|fontScale" android:finishOnTaskLaunch="true" android:label="@string/icon_label" android:launchMode="singleInstance" android:multiprocess="false" android:name=".Nova" android:screenOrientation="landscape">
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN"/>
+                <category android:name="android.intent.category.LAUNCHER"/>
+            </intent-filter>
+        </activity>
+        <activity android:configChanges="mcc|mnc|locale|touchscreen|keyboard|keyboardHidden|navigation|orientation|screenLayout|fontScale" android:label="@string/icon_label" android:multiprocess="false" android:name=".installer.GameInstaller" android:screenOrientation="landscape" android:theme="@style/Theme.GameInstallerNoBG"/>
+        <activity android:clearTaskOnLaunch="true" android:configChanges="mcc|mnc|locale|touchscreen|keyboard|keyboardHidden|navigation|orientation|screenLayout|fontScale" android:finishOnTaskLaunch="true" android:multiprocess="false" android:name=".IGPMain" android:screenOrientation="portrait" android:theme="@android:style/Theme.NoTitleBar.Fullscreen"/>
+        <activity android:clearTaskOnLaunch="true" android:configChanges="mcc|mnc|locale|touchscreen|keyboard|keyboardHidden|navigation|orientation|screenLayout|fontScale" android:finishOnTaskLaunch="true" android:multiprocess="false" android:name=".MyVideoView" android:screenOrientation="landscape"/>
+        <activity android:configChanges="mcc|mnc|locale|touchscreen|keyboard|keyboardHidden|navigation|orientation|screenLayout|fontScale" android:multiprocess="false" android:name=".GLiveMain" android:screenOrientation="portrait" android:theme="@android:style/Theme.NoTitleBar"/>
+        <activity android:clearTaskOnLaunch="true" android:configChanges="mcc|mnc|locale|touchscreen|keyboard|keyboardHidden|navigation|orientation|screenLayout|fontScale" android:finishOnTaskLaunch="true" android:multiprocess="false" android:name=".IGPActivity" android:screenOrientation="landscape"/>
+    </application>
+    <uses-feature android:name="android.hardware.touchscreen"/>
+    <supports-screens android:anyDensity="true" android:largeScreens="true" android:normalScreens="true" android:resizeable="false" android:smallScreens="false"/>
+</manifest>

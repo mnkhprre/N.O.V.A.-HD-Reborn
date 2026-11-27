@@ -1,0 +1,11 @@
+GameVer: 1.1.1
+GGI: 22324
+Date: 111-44
+type: 1
+min: 1.0.0
+configured: 0
+XplayerURL: http://gllive-beta.gameloft.com/ope/GenericXPlayer_v1.php
+XPPHPVerNo: 4
+ChatServer: gllive-beta.gameloft.com
+ChatRoomDomain: conference.gllive-beta.gameloft.com
+ChatDomain: gllive-beta.gameloft.com
