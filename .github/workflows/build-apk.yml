@@ -1,0 +1,72 @@
+name: Build Android APK
+
+on:
+  push:
+    branches: [main]
+  pull_request:
+    branches: [main]
+  workflow_dispatch:
+
+permissions:
+  contents: read
+
+jobs:
+  build-apk:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Check out repository
+        uses: actions/checkout@v7
+
+      - name: Set up Java
+        uses: actions/setup-java@v6
+        with:
+          distribution: temurin
+          java-version: '17'
+
+      - name: Set up Android SDK
+        uses: android-actions/setup-android@v4
+        with:
+          packages: 'build-tools;36.0.0'
+
+      - name: Download Apktool
+        run: |
+          curl --fail --location --silent --show-error \
+            https://github.com/iBotPeaches/Apktool/releases/download/v2.12.1/apktool_2.12.1.jar \
+            --output "$RUNNER_TEMP/apktool.jar"
+
+      - name: Build APK
+        run: |
+          java -jar "$RUNNER_TEMP/apktool.jar" b \
+            --frame-path "$RUNNER_TEMP/apktool-framework" \
+            "N.0.V.A. HD 1.1.4 All screens" \
+            --output "$RUNNER_TEMP/nova-reborn-unsigned.apk"
+
+      - name: Sign debug APK
+        run: |
+          keytool -genkeypair -v \
+            -keystore "$RUNNER_TEMP/debug.keystore" \
+            -storepass android \
+            -alias androiddebugkey \
+            -keypass android \
+            -dname "CN=Android Debug,O=Android,C=US" \
+            -keyalg RSA \
+            -keysize 2048 \
+            -validity 10000
+
+          "$ANDROID_HOME/build-tools/36.0.0/apksigner" sign \
+            --ks "$RUNNER_TEMP/debug.keystore" \
+            --ks-key-alias androiddebugkey \
+            --ks-pass pass:android \
+            --key-pass pass:android \
+            --out "$RUNNER_TEMP/nova-reborn-debug.apk" \
+            "$RUNNER_TEMP/nova-reborn-unsigned.apk"
+
+          "$ANDROID_HOME/build-tools/36.0.0/apksigner" verify --verbose \
+            "$RUNNER_TEMP/nova-reborn-debug.apk"
+
+      - name: Upload APK artifact
+        uses: actions/upload-artifact@v7
+        with:
+          name: nova-reborn-debug-apk
+          path: ${{ runner.temp }}/nova-reborn-debug.apk
+          retention-days: 14
