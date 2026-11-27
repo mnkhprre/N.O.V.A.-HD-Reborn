@@ -6,6 +6,11 @@ on:
   pull_request:
     branches: [main]
   workflow_dispatch:
+    inputs:
+      game_data_url:
+        description: Direct URL of the game data ZIP
+        required: false
+        default: https://archive.org/download/nova-1/Nova%201.zip
 
 permissions:
   contents: read
@@ -26,18 +31,79 @@ jobs:
       - name: Set up Android SDK
         uses: android-actions/setup-android@v4
         with:
-          packages: 'build-tools;36.0.0'
+          packages: |
+            platforms;android-23
+            build-tools;36.0.0
 
-      - name: Download Apktool
+      - name: Download Apktool and Baksmali dependencies
         run: |
-          curl --fail --location --silent --show-error \
+          curl --fail --location --silent --show-error --retry 3 \
             https://github.com/iBotPeaches/Apktool/releases/download/v2.12.1/apktool_2.12.1.jar \
             --output "$RUNNER_TEMP/apktool.jar"
+          curl --fail --location --silent --show-error --retry 3 \
+            https://repo.maven.apache.org/maven2/org/smali/baksmali/2.5.2/baksmali-2.5.2.jar \
+            --output "$RUNNER_TEMP/baksmali.jar"
+          curl --fail --location --silent --show-error --retry 3 \
+            https://repo.maven.apache.org/maven2/org/smali/dexlib2/2.5.2/dexlib2-2.5.2.jar \
+            --output "$RUNNER_TEMP/dexlib2.jar"
+          curl --fail --location --silent --show-error --retry 3 \
+            https://repo.maven.apache.org/maven2/org/smali/util/2.5.2/util-2.5.2.jar \
+            --output "$RUNNER_TEMP/smali-util.jar"
+          curl --fail --location --silent --show-error --retry 3 \
+            https://repo.maven.apache.org/maven2/com/google/guava/guava/27.1-android/guava-27.1-android.jar \
+            --output "$RUNNER_TEMP/guava.jar"
+          curl --fail --location --silent --show-error --retry 3 \
+            https://repo.maven.apache.org/maven2/com/beust/jcommander/1.64/jcommander-1.64.jar \
+            --output "$RUNNER_TEMP/jcommander.jar"
+          curl --fail --location --silent --show-error --retry 3 \
+            https://repo.maven.apache.org/maven2/com/google/code/findbugs/jsr305/3.0.2/jsr305-3.0.2.jar \
+            --output "$RUNNER_TEMP/jsr305.jar"
+
+      - name: Download and validate game data
+        env:
+          GAME_DATA_URL: ${{ github.event.inputs.game_data_url || 'https://archive.org/download/nova-1/Nova%201.zip' }}
+        run: |
+          DATA_ZIP="$RUNNER_TEMP/nova-game-data.zip"
+          curl --fail --location --silent --show-error --retry 3 \
+            "$GAME_DATA_URL" --output "$DATA_ZIP"
+
+          if ! unzip -Z1 "$DATA_ZIP" | grep -Fxq 'gameloft/games/nova/entities.pack'; then
+            echo "::error::The game-data ZIP does not contain gameloft/games/nova/entities.pack"
+            exit 1
+          fi
+
+          cp "$DATA_ZIP" "N.0.V.A. HD 1.1.4 All screens/assets/nova-game-data.zip"
+
+      - name: Compile first-launch data installer
+        run: |
+          SOURCE_DIR="N.0.V.A. HD 1.1.4 All screens/smali/com/gameloft/android/TBFV/GloftNOHP/ML"
+          CLASS_DIR="$RUNNER_TEMP/bootstrap-classes"
+          DEX_DIR="$RUNNER_TEMP/bootstrap-dex"
+          SMALI_DIR="$RUNNER_TEMP/bootstrap-smali"
+          mkdir -p "$CLASS_DIR" "$DEX_DIR"
+
+          javac -source 8 -target 8 -Xlint:-options \
+            -bootclasspath "$ANDROID_HOME/platforms/android-23/android.jar" \
+            -d "$CLASS_DIR" "$SOURCE_DIR/BundledDataActivity.java"
+
+          "$ANDROID_HOME/build-tools/36.0.0/d8" \
+            --min-api 8 \
+            --lib "$ANDROID_HOME/platforms/android-23/android.jar" \
+            --output "$DEX_DIR" \
+            "$CLASS_DIR"/com/gameloft/android/TBFV/GloftNOHP/ML/BundledDataActivity*.class
+
+          BAKSMALI_CP="$RUNNER_TEMP/baksmali.jar:$RUNNER_TEMP/dexlib2.jar:$RUNNER_TEMP/smali-util.jar:$RUNNER_TEMP/guava.jar:$RUNNER_TEMP/jcommander.jar:$RUNNER_TEMP/jsr305.jar"
+          java -cp "$BAKSMALI_CP" org.jf.baksmali.Main disassemble \
+            --output "$SMALI_DIR" "$DEX_DIR/classes.dex"
+
+          cp "$SMALI_DIR"/com/gameloft/android/TBFV/GloftNOHP/ML/BundledDataActivity*.smali \
+            "$SOURCE_DIR/"
 
       - name: Build APK
         run: |
           java -jar "$RUNNER_TEMP/apktool.jar" b \
             --frame-path "$RUNNER_TEMP/apktool-framework" \
+            -0 zip \
             "N.0.V.A. HD 1.1.4 All screens" \
             --output "$RUNNER_TEMP/nova-reborn-unsigned.apk"
 
@@ -76,17 +142,17 @@ jobs:
             --ks-key-alias "$KEY_ALIAS" \
             --ks-pass env:KEYSTORE_PASSWORD \
             --key-pass env:KEY_PASSWORD \
-            --out "$RUNNER_TEMP/nova-reborn-debug.apk" \
+            --out "$RUNNER_TEMP/nova-reborn-1.1.5-with-game-data.apk" \
             "$RUNNER_TEMP/nova-reborn-unsigned.apk"
 
           rm -f "$KEYSTORE"
 
           "$ANDROID_HOME/build-tools/36.0.0/apksigner" verify --verbose \
-            "$RUNNER_TEMP/nova-reborn-debug.apk"
+            "$RUNNER_TEMP/nova-reborn-1.1.5-with-game-data.apk"
 
-      - name: Upload APK artifact
+      - name: Upload self-installing APK artifact
         uses: actions/upload-artifact@v7
         with:
-          name: nova-reborn-debug-apk
-          path: ${{ runner.temp }}/nova-reborn-debug.apk
+          name: nova-reborn-1.1.5-with-game-data
+          path: ${{ runner.temp }}/nova-reborn-1.1.5-with-game-data.apk
           retention-days: 14

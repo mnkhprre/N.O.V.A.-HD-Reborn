@@ -533,7 +533,7 @@
 
     const-string v1, "GAME_VERSION"
 
-    const-string v2, "1.1.4"
+    const-string v2, "1.1.5"
 
     invoke-virtual {v0, v1, v2}, Ljava/lang/String;->replace(Ljava/lang/CharSequence;Ljava/lang/CharSequence;)Ljava/lang/String;
 

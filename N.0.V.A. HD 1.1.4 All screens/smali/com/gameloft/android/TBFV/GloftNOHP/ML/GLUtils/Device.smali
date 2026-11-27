@@ -737,7 +737,7 @@
 .method public static d()[B
     .locals 1
 
-    const-string v0, "1.1.4"
+    const-string v0, "1.1.5"
 
     invoke-virtual {v0}, Ljava/lang/String;->getBytes()[B
 

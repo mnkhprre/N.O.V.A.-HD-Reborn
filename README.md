@@ -10,12 +10,14 @@ The game features three combat sectors, upgradeable weapons, Xeno enemies, suit 
 
 [**View N.O.V.A. HD 1.1.4 Controller Support →**](https://github.com/mnkhprre/nova_reborn/releases/tag/v1.1.4-controller.1)
 
-Download `nova-reborn-debug.apk` from the release page and install it on your Android device. It will not install over a copy signed with a different key (for example the original Play Store build); uninstall that copy first. Game data in `/sdcard/gameloft/games/nova` is kept.
+Original game download: [N.O.V.A. on the Internet Archive](https://archive.org/details/nova-1).
+
+Download `nova-reborn-1.1.5-with-game-data.apk` from the latest successful GitHub Actions run and install it on your Android device. It will not install over a copy signed with a different key (for example the original Play Store build); uninstall that copy first. On first launch, the app installs the bundled files into `/sdcard/gameloft/games/nova` before starting the game. Existing files not present in the bundle are preserved.
 
 **Android 14 and newer:** the system blocks installing apps that target very old Android versions, so a normal install fails. Install with adb instead:
 
 ```bash
-adb install --bypass-low-target-sdk-block nova-reborn-debug.apk
+adb install --bypass-low-target-sdk-block nova-reborn-1.1.5-with-game-data.apk
 ```
 
 The target SDK cannot simply be raised: `libnova.so` contains text relocations, which Android refuses to load for apps targeting API 23 or newer. The game also ships only 32-bit (`armeabi-v7a`) native code, so it does not run on 64-bit-only devices.
@@ -54,7 +56,9 @@ The project uses React, TypeScript, Vite, and Three.js. A current browser with W
 
 ## Android APK build
 
-`.github/workflows/build-apk.yml` builds the Android APK with GitHub Actions on pushes to the `main` branch and on pull requests. The build output is available in the workflow run's **Artifacts** section as `nova-reborn-debug-apk` and is retained for 14 days. Use the release link above to download the release APK.
+`.github/workflows/build-apk.yml` builds and signs a single installable APK on pushes to `main`, pull requests, or a manual workflow run. During the build, GitHub Actions downloads the game-data ZIP from the Internet Archive and packages it inside the APK. The launcher extracts the files on first launch to `/sdcard/gameloft/games/nova`, then starts the game. Allow storage access when prompted and keep the app open during extraction.
+
+The workflow artifact is `nova-reborn-1.1.5-with-game-data` in the run's **Artifacts** section and is retained for 14 days. Manual runs can override the data ZIP URL with the `game_data_url` input. The resulting APK is about 200 MB because it contains the game data.
 
 ### Signing key
 

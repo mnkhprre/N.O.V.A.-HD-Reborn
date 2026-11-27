@@ -1,13 +1,13 @@
 version: 3.0.3
-apkFileName: N.0.V.A. HD 1.1.4 All screens.apk
+apkFileName: N.0.V.A. HD 1.1.5 All screens.apk
 usesFramework:
   ids:
   - 1
 sdkInfo:
   minSdkVersion: 8
 versionInfo:
-  versionCode: 114
-  versionName: 1.1.4
+  versionCode: 115
+  versionName: 1.1.5
 resourcesInfo:
   packageId: 127
   keepRawValues: true
