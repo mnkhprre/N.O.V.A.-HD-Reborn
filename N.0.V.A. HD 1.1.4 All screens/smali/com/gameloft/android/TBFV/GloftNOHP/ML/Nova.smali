@@ -54,6 +54,10 @@
 
 .field private fireDown:Z
 
+.field private hatX:I
+
+.field private hatY:I
+
 
 # direct methods
 .method static constructor <clinit>()V
@@ -1324,6 +1328,124 @@
 
 # Analog triggers: max(AXIS_RTRIGGER, AXIS_GAS). Press above 0.5, release
 # below 0.3 so a half-held trigger does not flicker.
+# D-pad reported as HAT axes (e.g. Xbox controllers): turn direction
+# changes into DPAD key down/up events through onKeyDown/onKeyUp.
+.method private handleHatAxes(Landroid/view/MotionEvent;)V
+    .locals 4
+
+    const/16 v0, 0xf
+
+    invoke-virtual {p1, v0}, Landroid/view/MotionEvent;->getAxisValue(I)F
+
+    move-result v0
+
+    invoke-static {v0}, Lcom/gameloft/android/TBFV/GloftNOHP/ML/Nova;->hatDirection(F)I
+
+    move-result v0
+
+    iget v1, p0, Lcom/gameloft/android/TBFV/GloftNOHP/ML/Nova;->hatX:I
+
+    const/16 v2, 0x15
+
+    const/16 v3, 0x16
+
+    invoke-direct {p0, v1, v0, v2, v3}, Lcom/gameloft/android/TBFV/GloftNOHP/ML/Nova;->applyHat(IIII)V
+
+    iput v0, p0, Lcom/gameloft/android/TBFV/GloftNOHP/ML/Nova;->hatX:I
+
+    const/16 v0, 0x10
+
+    invoke-virtual {p1, v0}, Landroid/view/MotionEvent;->getAxisValue(I)F
+
+    move-result v0
+
+    invoke-static {v0}, Lcom/gameloft/android/TBFV/GloftNOHP/ML/Nova;->hatDirection(F)I
+
+    move-result v0
+
+    iget v1, p0, Lcom/gameloft/android/TBFV/GloftNOHP/ML/Nova;->hatY:I
+
+    const/16 v2, 0x13
+
+    const/16 v3, 0x14
+
+    invoke-direct {p0, v1, v0, v2, v3}, Lcom/gameloft/android/TBFV/GloftNOHP/ML/Nova;->applyHat(IIII)V
+
+    iput v0, p0, Lcom/gameloft/android/TBFV/GloftNOHP/ML/Nova;->hatY:I
+
+    return-void
+.end method
+
+# -1 below -0.5, 1 above 0.5, otherwise 0.
+.method private static hatDirection(F)I
+    .locals 2
+
+    const/high16 v0, 0x3f000000
+
+    cmpl-float v1, p0, v0
+
+    if-lez v1, :hat_positive
+
+    const/high16 v0, -0x41000000
+
+    cmpg-float v1, p0, v0
+
+    if-gez v1, :hat_zero
+
+    const/4 v0, -0x1
+
+    return v0
+
+    :hat_positive
+    const/4 v0, 0x1
+
+    return v0
+
+    :hat_zero
+    const/4 v0, 0x0
+
+    return v0
+.end method
+
+# p1 = old direction, p2 = new direction, p3 = key for -1, p4 = key for +1
+.method private applyHat(IIII)V
+    .locals 2
+
+    if-eq p1, p2, :apply_done
+
+    const/4 v1, 0x0
+
+    const/4 v0, -0x1
+
+    if-ne p1, v0, :old_not_negative
+
+    invoke-virtual {p0, p3, v1}, Lcom/gameloft/android/TBFV/GloftNOHP/ML/Nova;->onKeyUp(ILandroid/view/KeyEvent;)Z
+
+    :old_not_negative
+    const/4 v0, 0x1
+
+    if-ne p1, v0, :old_not_positive
+
+    invoke-virtual {p0, p4, v1}, Lcom/gameloft/android/TBFV/GloftNOHP/ML/Nova;->onKeyUp(ILandroid/view/KeyEvent;)Z
+
+    :old_not_positive
+    const/4 v0, -0x1
+
+    if-ne p2, v0, :new_not_negative
+
+    invoke-virtual {p0, p3, v1}, Lcom/gameloft/android/TBFV/GloftNOHP/ML/Nova;->onKeyDown(ILandroid/view/KeyEvent;)Z
+
+    :new_not_negative
+    const/4 v0, 0x1
+
+    if-ne p2, v0, :apply_done
+
+    invoke-virtual {p0, p4, v1}, Lcom/gameloft/android/TBFV/GloftNOHP/ML/Nova;->onKeyDown(ILandroid/view/KeyEvent;)Z
+
+    :apply_done
+    return-void
+.end method
+
 .method private handleTriggerAxes(Landroid/view/MotionEvent;)V
     .locals 3
 
@@ -2378,6 +2500,8 @@
     if-eqz v0, :generic_super
 
     invoke-direct {p0, p1}, Lcom/gameloft/android/TBFV/GloftNOHP/ML/Nova;->handleTriggerAxes(Landroid/view/MotionEvent;)V
+
+    invoke-direct {p0, p1}, Lcom/gameloft/android/TBFV/GloftNOHP/ML/Nova;->handleHatAxes(Landroid/view/MotionEvent;)V
 
     const/4 v0, 0x0
 
