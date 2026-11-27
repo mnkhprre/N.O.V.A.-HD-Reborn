@@ -52,6 +52,8 @@
 
 .field private x:I
 
+.field private fireDown:Z
+
 
 # direct methods
 .method static constructor <clinit>()V
@@ -1285,6 +1287,94 @@
 .end method
 
 .method private dispatchControllerButton(IZ)V
+    .locals 1
+
+    # R2 (KEYCODE_BUTTON_R2) goes through setFireState so that a controller
+    # reporting R2 as both a key and an analog axis fires only once.
+    const/16 v0, 0x69
+
+    if-ne p1, v0, :not_fire
+
+    invoke-direct {p0, p2}, Lcom/gameloft/android/TBFV/GloftNOHP/ML/Nova;->setFireState(Z)V
+
+    return-void
+
+    :not_fire
+    invoke-direct {p0, p1, p2}, Lcom/gameloft/android/TBFV/GloftNOHP/ML/Nova;->dispatchControllerButtonRaw(IZ)V
+
+    return-void
+.end method
+
+.method private setFireState(Z)V
+    .locals 1
+
+    iget-boolean v0, p0, Lcom/gameloft/android/TBFV/GloftNOHP/ML/Nova;->fireDown:Z
+
+    if-eq v0, p1, :fire_unchanged
+
+    iput-boolean p1, p0, Lcom/gameloft/android/TBFV/GloftNOHP/ML/Nova;->fireDown:Z
+
+    const/16 v0, 0x69
+
+    invoke-direct {p0, v0, p1}, Lcom/gameloft/android/TBFV/GloftNOHP/ML/Nova;->dispatchControllerButtonRaw(IZ)V
+
+    :fire_unchanged
+    return-void
+.end method
+
+# Analog triggers: max(AXIS_RTRIGGER, AXIS_GAS). Press above 0.5, release
+# below 0.3 so a half-held trigger does not flicker.
+.method private handleTriggerAxes(Landroid/view/MotionEvent;)V
+    .locals 3
+
+    const/16 v0, 0x12
+
+    invoke-virtual {p1, v0}, Landroid/view/MotionEvent;->getAxisValue(I)F
+
+    move-result v0
+
+    const/16 v1, 0x16
+
+    invoke-virtual {p1, v1}, Landroid/view/MotionEvent;->getAxisValue(I)F
+
+    move-result v1
+
+    invoke-static {v0, v1}, Ljava/lang/Math;->max(FF)F
+
+    move-result v0
+
+    iget-boolean v1, p0, Lcom/gameloft/android/TBFV/GloftNOHP/ML/Nova;->fireDown:Z
+
+    if-nez v1, :trigger_held
+
+    const/high16 v2, 0x3f000000
+
+    cmpl-float v1, v0, v2
+
+    if-lez v1, :trigger_done
+
+    const/4 v1, 0x1
+
+    invoke-direct {p0, v1}, Lcom/gameloft/android/TBFV/GloftNOHP/ML/Nova;->setFireState(Z)V
+
+    goto :trigger_done
+
+    :trigger_held
+    const v2, 0x3e99999a
+
+    cmpg-float v1, v0, v2
+
+    if-gez v1, :trigger_done
+
+    const/4 v1, 0x0
+
+    invoke-direct {p0, v1}, Lcom/gameloft/android/TBFV/GloftNOHP/ML/Nova;->setFireState(Z)V
+
+    :trigger_done
+    return-void
+.end method
+
+.method private dispatchControllerButtonRaw(IZ)V
     .locals 8
 
     const/16 v0, 0x60
@@ -1313,7 +1403,7 @@
 
     const/16 v0, 0x66
 
-    if-eq p1, v0, :button_weapon_next
+    if-eq p1, v0, :button_weapon_previous
 
     const/16 v0, 0x6c
 
@@ -2286,6 +2376,8 @@
     move-result v0
 
     if-eqz v0, :generic_super
+
+    invoke-direct {p0, p1}, Lcom/gameloft/android/TBFV/GloftNOHP/ML/Nova;->handleTriggerAxes(Landroid/view/MotionEvent;)V
 
     const/4 v0, 0x0
 
