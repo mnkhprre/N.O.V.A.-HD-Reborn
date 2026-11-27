@@ -10,3 +10,19 @@ Nova_controller*.apk.idsig
 
 # Original input archive
 Nova 1.zip
+
+# Node / Vite
+node_modules/
+dist/
+*.tsbuildinfo
+.env
+.env.*
+!.env.example
+
+# OS metadata
+.DS_Store
+Thumbs.db
+
+# Signing keys
+*.keystore
+*.jks
