@@ -65,8 +65,8 @@ jobs:
           curl --fail --location --silent --show-error --retry 3 \
             "$GAME_DATA_URL" --output "$DATA_ZIP"
 
-          if ! unzip -Z1 "$DATA_ZIP" | grep -Fxq 'gameloft/games/nova/entities.pack'; then
-            echo "::error::The game-data ZIP does not contain gameloft/games/nova/entities.pack"
+          if ! unzip -Z1 "$DATA_ZIP" | tr '[:upper:]' '[:lower:]' | grep -Fxq 'gameloft/games/nova/entities.pack'; then
+            echo "::error::The game-data ZIP does not contain gameloft/games/nova/entities.pack (path check ignores letter case)"
             exit 1
           fi
 

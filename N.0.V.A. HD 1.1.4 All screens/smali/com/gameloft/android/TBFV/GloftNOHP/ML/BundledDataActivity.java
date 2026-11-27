@@ -187,7 +187,7 @@ public final class BundledDataActivity extends Activity {
             ZipEntry entry;
             while ((entry = zip.getNextEntry()) != null) {
                 String name = entry.getName();
-                if (name.startsWith(DATA_PREFIX)) {
+                if (name.regionMatches(true, 0, DATA_PREFIX, 0, DATA_PREFIX.length())) {
                     String relative = name.substring(DATA_PREFIX.length());
                     if (relative.length() > 0) {
                         File output = new File(staging, relative);
