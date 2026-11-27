@@ -44,6 +44,14 @@
 
 .field private q:[[F
 
+.field private u:Z
+
+.field private v:Z
+
+.field private w:I
+
+.field private x:I
+
 
 # direct methods
 .method static constructor <clinit>()V
@@ -1209,6 +1217,10 @@
 
     invoke-static {p1}, Lcom/gameloft/android/TBFV/GloftNOHP/ML/Nova;->nativeSetOnKeyDown(I)V
 
+    const/4 v0, 0x1
+
+    invoke-direct {p0, p1, v0}, Lcom/gameloft/android/TBFV/GloftNOHP/ML/Nova;->dispatchControllerButton(IZ)V
+
     const/16 v0, 0x18
 
     if-eq p1, v0, :cond_0
@@ -1235,6 +1247,10 @@
 
 .method public onKeyUp(ILandroid/view/KeyEvent;)Z
     .locals 3
+
+    const/4 v0, 0x0
+
+    invoke-direct {p0, p1, v0}, Lcom/gameloft/android/TBFV/GloftNOHP/ML/Nova;->dispatchControllerButton(IZ)V
 
     const/16 v2, 0x19
 
@@ -1266,6 +1282,141 @@
     sput p1, Lcom/gameloft/android/TBFV/GloftNOHP/ML/Nova;->o:I
 
     goto :goto_0
+.end method
+
+.method private dispatchControllerButton(IZ)V
+    .locals 8
+
+    const/16 v0, 0x60
+
+    if-eq p1, v0, :button_jump
+
+    const/16 v0, 0x67
+
+    if-eq p1, v0, :button_reload
+
+    const/16 v0, 0x69
+
+    if-eq p1, v0, :button_fire
+
+    const/16 v0, 0x61
+
+    if-eq p1, v0, :button_jump
+
+    const/16 v0, 0x63
+
+    if-eq p1, v0, :button_ability
+
+    const/16 v0, 0x64
+
+    if-eq p1, v0, :button_weapon_next
+
+    const/16 v0, 0x66
+
+    if-eq p1, v0, :button_weapon_next
+
+    const/16 v0, 0x6c
+
+    if-eq p1, v0, :button_pause
+
+    return-void
+
+    :button_fire
+    const/4 v0, 0x2
+
+    const v1, 0x3f666666
+
+    const v2, 0x3f2e147b
+
+    goto :button_dispatch
+
+    :button_jump
+    const/4 v0, 0x3
+
+    const v1, 0x3f733333
+
+    const v2, 0x3f4ccccd
+
+    goto :button_dispatch
+
+    :button_reload
+    const/16 v0, 0x8
+
+    const v1, 0x3f5eb852
+
+    const v2, 0x3e051eb8
+
+    goto :button_dispatch
+
+    :button_ability
+    const/4 v0, 0x4
+
+    const v1, 0x3f51eb85
+
+    const v2, 0x3f68f5c3
+
+    goto :button_dispatch
+
+    :button_weapon_next
+    const/4 v0, 0x5
+
+    const v1, 0x3f7ae148
+
+    const v2, 0x3e051eb8
+
+    goto :button_dispatch
+
+    :button_weapon_previous
+    const/4 v0, 0x6
+
+    const v1, 0x3f428f5c
+
+    const v2, 0x3e051eb8
+
+    goto :button_dispatch
+
+    :button_pause
+    const/4 v0, 0x7
+
+    const v1, 0x3d851eb8
+
+    const v2, 0x3db851ec
+
+    :button_dispatch
+    invoke-virtual {p0}, Lcom/gameloft/android/TBFV/GloftNOHP/ML/Nova;->getResources()Landroid/content/res/Resources;
+
+    move-result-object v3
+
+    invoke-virtual {v3}, Landroid/content/res/Resources;->getDisplayMetrics()Landroid/util/DisplayMetrics;
+
+    move-result-object v3
+
+    iget v4, v3, Landroid/util/DisplayMetrics;->widthPixels:I
+
+    int-to-float v4, v4
+
+    mul-float/2addr v4, v1
+
+    iget v3, v3, Landroid/util/DisplayMetrics;->heightPixels:I
+
+    int-to-float v3, v3
+
+    mul-float/2addr v3, v2
+
+    float-to-int v4, v4
+
+    float-to-int v3, v3
+
+    if-eqz p2, :button_release
+
+    invoke-direct {p0, v4, v3, v0}, Lcom/gameloft/android/TBFV/GloftNOHP/ML/Nova;->nativeTouchPressed(III)V
+
+    return-void
+
+    :button_release
+    invoke-direct {p0, v4, v3, v0}, Lcom/gameloft/android/TBFV/GloftNOHP/ML/Nova;->nativeTouchReleased(III)V
+
+    return-void
 .end method
 
 .method protected onPause()V
@@ -2123,6 +2274,284 @@
     move-exception v0
 
     goto :goto_4
+.end method
+
+.method public onGenericMotionEvent(Landroid/view/MotionEvent;)Z
+    .locals 14
+
+    const v0, 0x1000010
+
+    invoke-virtual {p1, v0}, Landroid/view/MotionEvent;->isFromSource(I)Z
+
+    move-result v0
+
+    if-eqz v0, :generic_super
+
+    const/4 v0, 0x0
+
+    invoke-virtual {p1, v0}, Landroid/view/MotionEvent;->getAxisValue(I)F
+
+    move-result v1
+
+    const/4 v0, 0x1
+
+    invoke-virtual {p1, v0}, Landroid/view/MotionEvent;->getAxisValue(I)F
+
+    move-result v2
+
+    const/16 v0, 0xb
+
+    invoke-virtual {p1, v0}, Landroid/view/MotionEvent;->getAxisValue(I)F
+
+    move-result v3
+
+    const/16 v0, 0xe
+
+    invoke-virtual {p1, v0}, Landroid/view/MotionEvent;->getAxisValue(I)F
+
+    move-result v4
+
+    invoke-virtual {p0}, Lcom/gameloft/android/TBFV/GloftNOHP/ML/Nova;->getResources()Landroid/content/res/Resources;
+
+    move-result-object v5
+
+    invoke-virtual {v5}, Landroid/content/res/Resources;->getDisplayMetrics()Landroid/util/DisplayMetrics;
+
+    move-result-object v5
+
+    iget v6, v5, Landroid/util/DisplayMetrics;->widthPixels:I
+
+    iget v7, v5, Landroid/util/DisplayMetrics;->heightPixels:I
+
+    invoke-static {v1}, Ljava/lang/Math;->abs(F)F
+
+    move-result v8
+
+    invoke-static {v2}, Ljava/lang/Math;->abs(F)F
+
+    move-result v9
+
+    invoke-static {v8, v9}, Ljava/lang/Math;->max(FF)F
+
+    move-result v8
+
+    const v9, 0x3e4ccccd
+
+    cmpl-float v8, v8, v9
+
+    if-lez v8, :generic_move_neutral
+
+    int-to-float v8, v6
+
+    const v9, 0x3e051eb8
+
+    mul-float/2addr v8, v9
+
+    int-to-float v9, v7
+
+    const v10, 0x3f2e147b
+
+    mul-float/2addr v9, v10
+
+    int-to-float v10, v6
+
+    const v11, 0x3d75c28f
+
+    mul-float/2addr v10, v11
+
+    mul-float/2addr v10, v1
+
+    add-float/2addr v8, v10
+
+    int-to-float v10, v7
+
+    const v11, 0x3dcccccd
+
+    mul-float/2addr v10, v11
+
+    mul-float/2addr v10, v2
+
+    add-float/2addr v9, v10
+
+    float-to-int v8, v8
+
+    float-to-int v9, v9
+
+    iget-boolean v10, p0, Lcom/gameloft/android/TBFV/GloftNOHP/ML/Nova;->u:Z
+
+    if-eqz v10, :generic_move_start
+
+    const/4 v10, 0x0
+
+    invoke-direct {p0, v8, v9, v10}, Lcom/gameloft/android/TBFV/GloftNOHP/ML/Nova;->nativeTouchMoved(III)V
+
+    goto :generic_right_stick
+
+    :generic_move_start
+    const/4 v10, 0x0
+
+    invoke-direct {p0, v8, v9, v10}, Lcom/gameloft/android/TBFV/GloftNOHP/ML/Nova;->nativeTouchPressed(III)V
+
+    const/4 v10, 0x1
+
+    iput-boolean v10, p0, Lcom/gameloft/android/TBFV/GloftNOHP/ML/Nova;->u:Z
+
+    goto :generic_right_stick
+
+    :generic_move_neutral
+    iget-boolean v8, p0, Lcom/gameloft/android/TBFV/GloftNOHP/ML/Nova;->u:Z
+
+    if-eqz v8, :generic_right_stick
+
+    int-to-float v8, v6
+
+    const v9, 0x3e051eb8
+
+    mul-float/2addr v8, v9
+
+    int-to-float v9, v7
+
+    const v10, 0x3f2e147b
+
+    mul-float/2addr v9, v10
+
+    float-to-int v8, v8
+
+    float-to-int v9, v9
+
+    const/4 v10, 0x0
+
+    invoke-direct {p0, v8, v9, v10}, Lcom/gameloft/android/TBFV/GloftNOHP/ML/Nova;->nativeTouchReleased(III)V
+
+    const/4 v8, 0x0
+
+    iput-boolean v8, p0, Lcom/gameloft/android/TBFV/GloftNOHP/ML/Nova;->u:Z
+
+    :generic_right_stick
+    invoke-static {v3}, Ljava/lang/Math;->abs(F)F
+
+    move-result v8
+
+    invoke-static {v4}, Ljava/lang/Math;->abs(F)F
+
+    move-result v9
+
+    invoke-static {v8, v9}, Ljava/lang/Math;->max(FF)F
+
+    move-result v8
+
+    const v9, 0x3df5c28f
+
+    cmpl-float v8, v8, v9
+
+    if-lez v8, :generic_right_neutral
+
+    iget-boolean v8, p0, Lcom/gameloft/android/TBFV/GloftNOHP/ML/Nova;->v:Z
+
+    if-eqz v8, :generic_right_start
+
+    goto :generic_right_move
+
+    :generic_right_start
+    int-to-float v8, v6
+
+    const v9, 0x3f266666
+
+    mul-float/2addr v8, v9
+
+    int-to-float v9, v7
+
+    const v10, 0x3f000000
+
+    mul-float/2addr v9, v10
+
+    float-to-int v8, v8
+
+    float-to-int v9, v9
+
+    const/4 v10, 0x1
+
+    invoke-direct {p0, v8, v9, v10}, Lcom/gameloft/android/TBFV/GloftNOHP/ML/Nova;->nativeTouchPressed(III)V
+
+    iput v8, p0, Lcom/gameloft/android/TBFV/GloftNOHP/ML/Nova;->w:I
+
+    iput v9, p0, Lcom/gameloft/android/TBFV/GloftNOHP/ML/Nova;->x:I
+
+    const/4 v10, 0x1
+
+    iput-boolean v10, p0, Lcom/gameloft/android/TBFV/GloftNOHP/ML/Nova;->v:Z
+
+    :generic_right_move
+    iget v8, p0, Lcom/gameloft/android/TBFV/GloftNOHP/ML/Nova;->w:I
+
+    iget v9, p0, Lcom/gameloft/android/TBFV/GloftNOHP/ML/Nova;->x:I
+
+    int-to-float v10, v6
+
+    const v11, 0x3b449ba6
+
+    mul-float/2addr v10, v11
+
+    mul-float/2addr v10, v3
+
+    invoke-static {v10}, Ljava/lang/Math;->round(F)I
+
+    move-result v10
+
+    add-int/2addr v8, v10
+
+    int-to-float v10, v7
+
+    const v11, 0x3b449ba6
+
+    mul-float/2addr v10, v11
+
+    mul-float/2addr v10, v4
+
+    invoke-static {v10}, Ljava/lang/Math;->round(F)I
+
+    move-result v10
+
+    add-int/2addr v9, v10
+
+    const/4 v10, 0x1
+
+    invoke-direct {p0, v8, v9, v10}, Lcom/gameloft/android/TBFV/GloftNOHP/ML/Nova;->nativeTouchMoved(III)V
+
+    iput v8, p0, Lcom/gameloft/android/TBFV/GloftNOHP/ML/Nova;->w:I
+
+    iput v9, p0, Lcom/gameloft/android/TBFV/GloftNOHP/ML/Nova;->x:I
+
+    goto :generic_consumed
+
+    :generic_right_neutral
+    iget-boolean v8, p0, Lcom/gameloft/android/TBFV/GloftNOHP/ML/Nova;->v:Z
+
+    if-eqz v8, :generic_consumed
+
+    iget v8, p0, Lcom/gameloft/android/TBFV/GloftNOHP/ML/Nova;->w:I
+
+    iget v9, p0, Lcom/gameloft/android/TBFV/GloftNOHP/ML/Nova;->x:I
+
+    const/4 v10, 0x1
+
+    invoke-direct {p0, v8, v9, v10}, Lcom/gameloft/android/TBFV/GloftNOHP/ML/Nova;->nativeTouchReleased(III)V
+
+    const/4 v8, 0x0
+
+    iput-boolean v8, p0, Lcom/gameloft/android/TBFV/GloftNOHP/ML/Nova;->v:Z
+
+    :generic_consumed
+    const/4 v0, 0x1
+
+    return v0
+
+    :generic_super
+    invoke-super {p0, p1}, Landroid/app/Activity;->onGenericMotionEvent(Landroid/view/MotionEvent;)Z
+
+    move-result v0
+
+    return v0
 .end method
 
 .method public onTrackballEvent(Landroid/view/MotionEvent;)Z

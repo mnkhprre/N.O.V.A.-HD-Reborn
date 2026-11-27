@@ -1,0 +1,12 @@
+# Local IDE metadata
+.idea/
+
+# Apktool build output
+**/build/
+
+# Locally generated controller APKs and v4 signature sidecars
+Nova_controller*.apk
+Nova_controller*.apk.idsig
+
+# Original input archive
+Nova 1.zip
